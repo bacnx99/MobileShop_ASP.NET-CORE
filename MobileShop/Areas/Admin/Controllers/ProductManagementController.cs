@@ -63,7 +63,7 @@ namespace MobileShop.Areas.Admin.Controllers
                 ViewBag.FullName = HttpContext.Session.GetString("FullName");
                 if (ModelState.IsValid)
                 {
-                    Product NewProduct = _productRepository.Add(product, Product_ImageThumbnail);
+                    _productRepository.Add(product, Product_ImageThumbnail);
                     return RedirectToAction("Index");
                 }
                 return View();

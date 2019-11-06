@@ -4,6 +4,7 @@ using MobileShop.Data.Interfaces;
 using MobileShop.Data.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -55,8 +56,6 @@ namespace MobileShop.Data.Repositories
                 AddPhoto(product, photo);
                 p.Product_ImageThumbnail = product.Product_ImageThumbnail;
 
-                //p.Product_ImageThumbnail = "avatar.png";
-
                 p.Product_OperatingSystem = product.Product_OperatingSystem;
                 p.Product_Chipset = product.Product_Chipset;
                 p.Product_CPUSpeed = product.Product_CPUSpeed;
@@ -99,10 +98,10 @@ namespace MobileShop.Data.Repositories
         public void AddPhoto(Product product, IFormFile photo)
         {
             Random rand = new Random();
-            string random = DateTime.Now.ToString("dd-MM-yyyy-HHmmss") + rand.Next(1, 10);
+            string random = DateTime.Now.ToString("dd-MM-yyyy-HHmmss") + rand.Next(1, 1000);
             var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images", random + photo.FileName);
             var stream = new FileStream(path, FileMode.Create);
-            photo.CopyToAsync(stream);
+            photo.CopyToAsync(stream).Wait();
             product.Product_ImageThumbnail = random + photo.FileName;
             stream.Close();
         }

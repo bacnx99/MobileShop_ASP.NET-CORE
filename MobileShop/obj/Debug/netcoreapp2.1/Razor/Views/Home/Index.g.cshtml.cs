@@ -67,7 +67,7 @@ using MobileShop.Data.Models;
 #line default
 #line hidden
             BeginContext(117, 57, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "22674984809d47c79796e3a577e38a8f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "56fc079d5a1542c98df9620dbc2c28b4", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -150,7 +150,7 @@ using MobileShop.Data.Models;
             WriteLiteral("                <li>\r\n                    <div class=\"product-box\">\r\n                        ");
             EndContext();
             BeginContext(2819, 657, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "217e38222a4345c7b894a2012fe33054", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f7514d693a0a483180d03340e078f519", async() => {
                 BeginContext(2896, 246, true);
                 WriteLiteral("\r\n                            <div class=\"image\">\r\n                                <img src=\"https://cdn.tgdd.vn/Products/Images/42/114115/iphone-x-64gb-21-400x400.jpg\" alt=\"\">\r\n                            </div>\r\n                            <h5>");
                 EndContext();

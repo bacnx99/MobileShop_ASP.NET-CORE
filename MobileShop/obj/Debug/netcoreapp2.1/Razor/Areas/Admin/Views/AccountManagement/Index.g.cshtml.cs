@@ -77,7 +77,7 @@ using MobileShop.Data.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(138, 78, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "7cb92f525c764c408c47d0f99c15ad9f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "b9cd36e7f1d44f2484ed4748c6b642ab", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -358,7 +358,7 @@ using MobileShop.Data.Models;
             WriteLiteral("                </td>\r\n                <td>\r\n                    ");
             EndContext();
             BeginContext(2706, 311, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a8f6b828f3be4009a9edc7d0d2034844", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6333e9c6eda14b1a88ab0deac14285ae", async() => {
                 BeginContext(2785, 225, true);
                 WriteLiteral("\r\n                        <button class=\"action-reset\" type=\"submit\">\r\n                            <i class=\"fas fa-redo\"></i>\r\n                            Đổi mật khẩu\r\n                        </button>\r\n                    ");
                 EndContext();
@@ -406,7 +406,7 @@ using MobileShop.Data.Models;
             WriteLiteral("                        ");
             EndContext();
             BeginContext(3125, 396, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2a79e6f28440472186b8640f29c83a2f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "65d87ff3541a41e9b42166efa27ca73e", async() => {
                 BeginContext(3196, 318, true);
                 WriteLiteral(@"
                             <button class=""action-block"" type=""submit"" onclick=""return confirm('Bạn có chắc muốn khóa tài khoản này?');"">
@@ -460,7 +460,7 @@ using MobileShop.Data.Models;
             WriteLiteral("                        ");
             EndContext();
             BeginContext(3619, 402, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4f33dc0eaf804e088ffefc46b34a18bb", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "591f9bed3e2845aa9a28d52cd9823260", async() => {
                 BeginContext(3692, 322, true);
                 WriteLiteral(@"
                             <button class=""action-unblock"" type=""submit"" onclick=""return confirm('Bạn có chắc muốn mở khóa tài khoản này?');"">
