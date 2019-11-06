@@ -1,0 +1,167 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/User/Product/DetailCSS.css" rel="stylesheet" />
+<div class="row">
+    <div class="row-box">
+        <h5>
+            DANH MỤC SẢN PHẨM
+            <i class="far fa-hand-point-down"></i>
+        </h5>
+        <span>
+            <i class="fas fa-map-marker-alt"></i>
+            Địa chỉ: 123 Bình Giã, Vũng Tàu
+        </span>
+        <span>
+            <i class="fas fa-phone-alt"></i>
+            Hotline: 1900.0702
+        </span>
+    </div>
+</div>
+
+
+
+<div class="product-category">
+    <ul>
+        <li><a href="#"><img src="//cdn.tgdd.vn/Brand/1/iPhone-(Apple)42-b_16.jpg"></a></li>
+        <li><a href="#"><img src="//cdn.tgdd.vn/Brand/1/Samsung42-b_25.jpg"></a></li>
+        <li><a href="#"><img src="//cdn.tgdd.vn/Brand/1/OPPO42-b_57.jpg"></a></li>
+        <li><a href="#"><img src="//cdn.tgdd.vn/Brand/1/Xiaomi42-b_31.png"></a></li>
+        <li><a href="#"><img src="//cdn.tgdd.vn/Brand/1/Huawei42-b_30.jpg"></a></li>
+        <li><a href="#"><img src="//cdn.tgdd.vn/Brand/1/Realme42-b_37.png"></a></li>
+        <li><a href="#"><img src="//cdn.tgdd.vn/Brand/1/Vsmart42-b_40.png"></a></li>
+        <li><a href="#"><img src="//cdn.tgdd.vn/Brand/1/Nokia42-b_21.jpg"></a></li>
+        <li><a href="#"><img src="//cdn.tgdd.vn/Brand/1/Coolpad42-b_33.png"></a></li>
+        <li><a href="#"><img src="//cdn.tgdd.vn/Brand/1/Asus-(Zenfone)42-b_14.jpg"></a></li>
+        <li><a href="#"><img src="//cdn.tgdd.vn/Brand/1/BlackBerry42-b_38.png"></a></li>
+        <li><a href="#"><img src="//cdn.tgdd.vn/Brand/1/Mobiistar42-b_20.jpg"></a></li>
+    </ul>
+</div>
+
+<div class="product-detail">
+    <div class="product-detail__title">
+        <h2>Điện thoại @Model.Product_Name</h2>
+    </div>
+    <div class="product-detail__content">
+        <div class="product-image">
+            <img src="https://cdn.tgdd.vn/Products/Images/42/198986/sieu-pham-galaxy-s-moi-2-512gb-black-400x460.png" alt="image">
+        </div>
+        <div class="product-xxx">
+            <h2 class="product-price">@Model.Product_Price.ToString("#,###")</h2>
+            <div class="product-info">
+                <table>
+                    <tr>
+                        <th class="product-info__label" colspan="2">Hệ điều hành - CPU</th>
+                    </tr>
+                    <tr>
+                        <td>Hệ điều hành:</td>
+                        <td>@Model.Product_OperatingSystem</td>
+                    </tr>
+                    <tr>
+                        <td>Chipset(Hãng SX CPU):</td>
+                        <td>@Model.Product_Chipset</td>
+                    </tr>
+                    <tr>
+                        <td>Tốc độ CPU:</td>
+                        <td>@Model.Product_CPUSpeed</td>
+                    </tr>
+                    <tr>
+                        <td>Chip đồ họa (GPU):</td>
+                        <td>@Model.Product_GPU</td>
+                    </tr>
+                    <tr>
+                        <th class="product-info__label" colspan="2">Màn hình</th>
+                    </tr>
+                    <tr>
+                        <td>Độ phân giải:</td>
+                        <td>@Model.Product_ScreenResolution</td>
+                    </tr>
+                    <tr>
+                        <td>Màn hình rộng:</td>
+                        <td>@Model.Product_ScreenWidth</td>
+                    </tr>
+                    <tr>
+                        <th class="product-info__label" colspan="2">Bộ nhớ & lưu trữ</th>
+                    </tr>
+                    <tr>
+                        <td>RAM:</td>
+                        <td>@Model.Product_RAM</td>
+                    </tr>
+                    <tr>
+                        <td>Bộ nhớ trong:</td>
+                        <td>@Model.Product_ROM</td>
+                    </tr>
+                    <tr>
+                        <td>Hỗ trợ thẻ nhớ:</td>
+                        @if (Model.Product_SDCardSupport == true)
+                        {
+                            <td>Có</td>
+                        }
+                        else
+                        {
+                            <td>Không</td>
+                        }
+                    </tr>
+                    <tr>
+                        <td>Thẻ nhớ ngoài:</td>
+                        <td>@Model.Product_SDCard</td>
+                    </tr>
+                    <tr>
+                        <th class="product-info__label" colspan="2">Camera</th>
+                    </tr>
+                    <tr>
+                        <td>Camera trước:</td>
+                        <td>@Model.Product_FrontCamera</td>
+                    </tr>
+                    <tr>
+                        <td>Camera sau:</td>
+                        <td>@Model.Product_RearCamera</td>
+                    </tr>
+                </table>
+            </div>
+            <a href="#">THÊM VÀO GIỎ HÀNG</a>
+        </div>
+        <div class="product-related">
+            <h2>Các sản phẩm liên quan</h2>
+            <ul>
+                <li>
+                    <a href="#">
+                        <img src="https://cdn.tgdd.vn/Products/Images/42/202028/oppo-a9-2020-green-1-400x400.jpg" alt="">
+                    </a>
+                    <span>Điện thoại OPPO F12 PRO 256GB</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="https://cdn.tgdd.vn/Products/Images/42/202028/oppo-a9-2020-green-1-400x400.jpg" alt="">
+                    </a>
+                    <span>Điện thoại OPPO F12 PRO 256GB</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="https://cdn.tgdd.vn/Products/Images/42/202028/oppo-a9-2020-green-1-400x400.jpg" alt="">
+                    </a>
+                    <span>Điện thoại OPPO F12 PRO 256GB</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="https://cdn.tgdd.vn/Products/Images/42/202028/oppo-a9-2020-green-1-400x400.jpg" alt="">
+                    </a>
+                    <span>Điện thoại OPPO F12 PRO 256GB</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="https://cdn.tgdd.vn/Products/Images/42/202028/oppo-a9-2020-green-1-400x400.jpg" alt="">
+                    </a>
+                    <span>Điện thoại OPPO F12 PRO 256GB</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="product-description">
+            <p>@Model.Product_LongDescription</p>
+        </div>
+    </div>
+</div>
+

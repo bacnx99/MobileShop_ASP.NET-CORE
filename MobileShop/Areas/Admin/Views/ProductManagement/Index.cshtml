@@ -1,0 +1,82 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+<link href="~/Admin/css/ProductManagementCSS/IndexCSS.css" rel="stylesheet" />
+
+<div class="wrapper-content">
+    <h2>TẤT CẢ SẢN PHẨM</h2>
+    <table>
+        <tr>
+            <th>#</th>
+            <th>Hình ảnh</th>
+            <th>Tên sản phẩm</th>
+            <th>Loại sản phẩm</th>
+            <th>Giá</th>
+            <th>Trạng thái</th>
+            <th>Yêu thích</th>
+            <th>Hành động</th>
+        </tr>
+        @{int i = 1;}
+        @foreach (var product in Model.Products)
+        {
+            <tr>
+                <td>@i</td>
+                <td>
+                    <img src="~/images/@product.Product_ImageThumbnail" alt="image" witdh="10%" />
+                </td>
+                <td>@product.Product_Name</td>
+                @foreach (var category in Model.Categories)
+                {
+                    if (product.Category_Id == category.Category_Id)
+                    {
+                        <td>@category.Category_Name</td>
+                    }
+                }
+                <td>@product.Product_Price.ToString("#,###")</td>
+                @if (product.Product_InStock)
+                {
+                    <td>
+                        <span style="background-color: #218838;">Còn hàng</span>
+                    </td>
+                }
+                else
+                {
+                    <td>
+                        <span style="background-color: #c82333;">Hết hàng</span>
+                    </td>
+                }
+                @if (product.Product_IsPreferred)
+                {
+                    <td><i class="fas fa-check"></i></td>
+                }
+                else
+                {
+                    <td>&nbsp;</td>
+                }
+                    <td>
+                        <form asp-action="Detail" asp-route-id="@product.Product_Id" method="GET">
+                            <button type="submit" class="action-detail">
+                                <i class="fas fa-info-circle"></i>
+                                Chi tiết
+                            </button>
+                        </form>
+                        <form asp-action="Edit" asp-route-id="@product.Product_Id" method="GET">
+                            <button type="submit" class="action-edit">
+                                <i class="fas fa-edit"></i>
+                                Sửa
+                            </button>
+                        </form>
+                        <form asp-action="Delete" asp-route-id="@product.Product_Id" method="POST">
+                            <button type="submit" class="action-delete" onclick="return confirm('Bạn có chắc chắn muốn xóa sản phẩm này ?');">
+                                <i class="fas fa-trash-alt"></i>
+                                Xóa
+                            </button>
+                        </form>
+                    </td>
+            </tr>
+            i++;
+        }
+    </table>
+</div>
