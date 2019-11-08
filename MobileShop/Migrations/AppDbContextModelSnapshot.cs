@@ -116,12 +116,38 @@ namespace MobileShop.Migrations
                     b.ToTable("Products");
                 });
 
+            modelBuilder.Entity("MobileShop.Data.Models.ShoppingCartItem", b =>
+                {
+                    b.Property<int>("ShoppingCartItem_Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("Product_Id");
+
+                    b.Property<int>("ShoppingCartItem_Amount");
+
+                    b.Property<string>("ShoppingCart_Id");
+
+                    b.HasKey("ShoppingCartItem_Id");
+
+                    b.HasIndex("Product_Id");
+
+                    b.ToTable("ShoppingCartItems");
+                });
+
             modelBuilder.Entity("MobileShop.Data.Models.Product", b =>
                 {
                     b.HasOne("MobileShop.Data.Models.Category", "Category")
                         .WithMany("Products")
                         .HasForeignKey("Category_Id")
                         .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("MobileShop.Data.Models.ShoppingCartItem", b =>
+                {
+                    b.HasOne("MobileShop.Data.Models.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("Product_Id");
                 });
 #pragma warning restore 612, 618
         }

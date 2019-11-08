@@ -40,3 +40,4 @@ E:\MobileShop\MobileShop\obj\Debug\netcoreapp2.1\MobileShop.Views.pdb
 E:\MobileShop\MobileShop\obj\Debug\netcoreapp2.1\MobileShop.csproj.CopyComplete
 E:\MobileShop\MobileShop\obj\Debug\netcoreapp2.1\Razor\Views\Product\Detail.g.cshtml.cs
 E:\MobileShop\MobileShop\obj\Debug\netcoreapp2.1\MobileShop.csprojAssemblyReference.cache
+E:\MobileShop\MobileShop\obj\Debug\netcoreapp2.1\Razor\Views\ShoppingCart\Index.g.cshtml.cs

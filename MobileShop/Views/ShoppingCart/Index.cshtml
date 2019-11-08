@@ -1,0 +1,44 @@
+﻿@model ShoppingCartViewModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row checkoutForm">
+    <h2>Your shopping cart</h2>
+    <h4>Here are the drinks in your shopping cart.</h4>
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>Tên sản phẩm</th>
+            <th>Đơn giá</th>
+            <th>Số lượng</th>
+            <th>Tạm tính</th>
+            <th>Hành động</th>
+        </tr>
+
+        @foreach (var line in Model.ShoppingCart.ShoppingCartItems)
+        {
+            <tr>
+                <td>@line.Product.Product_Name</td>
+                <td>@line.Product.Product_Price.ToString("#,###")</td>
+                <td>@line.ShoppingCartItem_Amount</td>
+                <td>
+                    @((line.ShoppingCartItem_Amount * line.Product.Product_Price).ToString("#,###"))
+                </td>
+                <td>
+                    <a asp-controller="ShoppingCart" asp-action="AddToShoppingCart" asp-route-id="@line.Product.Product_Id">Thêm</a>
+                    <a asp-controller="ShoppingCart" asp-action="RemoveFromShoppingCart" asp-route-id="@line.Product.Product_Id">Xóa</a>
+                </td>
+            </tr>
+        }
+
+        <tr>
+            <td colspan="3">Tổng tiền:</td>
+            <td colspan="2">
+                @Model.ShoppingCartTotal.ToString("#,###")
+            </td>
+        </tr>
+    </table>
+    <a asp-controller="ShoppingCart" asp-action="ClearShoppingCart">Clear</a>
+</div>
+

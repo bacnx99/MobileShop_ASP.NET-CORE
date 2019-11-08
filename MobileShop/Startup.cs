@@ -4,11 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MobileShop.Data;
 using MobileShop.Data.Interfaces;
+using MobileShop.Data.Models;
 using MobileShop.Data.Repositories;
 
 namespace MobileShop
@@ -33,6 +35,10 @@ namespace MobileShop
             services.AddTransient<IProductRepository, ProductRepository>();
             services.AddTransient<ICategoryRepository, CategoryRepository>();
             services.AddTransient<IAccountRepository, AccountRepository>();
+
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped(sp => ShoppingCart.GetCart(sp));
+            //services.AddTransient<IOrderRepository, OrderRepository>();
 
             services.AddMvc();
             services.AddDistributedMemoryCache();
