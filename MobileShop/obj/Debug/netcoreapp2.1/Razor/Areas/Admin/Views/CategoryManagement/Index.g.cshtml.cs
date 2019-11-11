@@ -73,7 +73,7 @@ using MobileShop.Data.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(137, 76, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "a521dd87addb4ded88fa5d2730cc2894", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "8b7b783424cb4ad8bfb13b5c06be6ef9", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -139,7 +139,7 @@ using MobileShop.Data.Models;
             WriteLiteral("</td>\r\n                <td>\r\n                    ");
             EndContext();
             BeginContext(720, 296, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b18cad3fcb04435d810685e002bb1289", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0f1c39baf09f4f94b24f778578e5639c", async() => {
                 BeginContext(794, 215, true);
                 WriteLiteral("\r\n                        <button type=\"submit\" class=\"action-edit\">\r\n                            <i class=\"fas fa-edit\"></i>\r\n                            Sửa\r\n                        </button>\r\n                    ");
                 EndContext();
@@ -178,7 +178,7 @@ using MobileShop.Data.Models;
             WriteLiteral("\r\n                    ");
             EndContext();
             BeginContext(1038, 381, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "515556d0b1fe40dbae15edc43bcc7fc9", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "085c7250b3084103bc7b50eb380f5a0d", async() => {
                 BeginContext(1115, 297, true);
                 WriteLiteral(@"
                         <button type=""submit"" class=""action-delete"" onclick=""return confirm('Bạn có chắc chắn muốn xóa loại sản phẩm này ?');"">
