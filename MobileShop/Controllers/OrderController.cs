@@ -27,12 +27,6 @@ namespace MobileShop.Controllers
 
             _orderRepository.CreateOrder(order);
             _shoppingCart.ClearCart();
-            return RedirectToAction("CheckoutComplete");
-        }
-
-        public IActionResult CheckoutComplete()
-        {
-            ViewBag.CheckoutCompleteMessage = "Thanks for your order! :) ";
             return View();
         }
     }

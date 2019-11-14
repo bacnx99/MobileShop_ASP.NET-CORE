@@ -85,3 +85,4 @@ C:\Users\Admin\Desktop\MobileShop\MobileShop\obj\Debug\netcoreapp2.1\MobileShop.
 C:\Users\Admin\Desktop\MobileShop\MobileShop\obj\Debug\netcoreapp2.1\MobileShop.pdb
 C:\Users\Admin\Desktop\MobileShop\MobileShop\obj\Debug\netcoreapp2.1\MobileShop.csproj.CopyComplete
 C:\Users\Admin\Desktop\MobileShop\MobileShop\obj\Debug\netcoreapp2.1\Razor\Views\Order\CheckOutComplete.g.cshtml.cs
+E:\MobileShop\MobileShop\obj\Debug\netcoreapp2.1\Razor\Views\Order\CheckOut.g.cshtml.cs
