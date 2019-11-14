@@ -38,7 +38,7 @@ namespace MobileShop.Migrations
 
                     b.Property<string>("Account_Permission");
 
-                    b.Property<string>("Account_Phone")
+                    b.Property<string>("Account_PhoneNumber")
                         .IsRequired();
 
                     b.Property<string>("Account_Sex");
@@ -61,6 +61,54 @@ namespace MobileShop.Migrations
                     b.HasKey("Category_Id");
 
                     b.ToTable("Categories");
+                });
+
+            modelBuilder.Entity("MobileShop.Data.Models.Order", b =>
+                {
+                    b.Property<int>("Order_Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool?>("IsCompleted");
+
+                    b.Property<string>("Order_Address");
+
+                    b.Property<string>("Order_Email");
+
+                    b.Property<string>("Order_Name");
+
+                    b.Property<string>("Order_PhoneNumber");
+
+                    b.Property<DateTime>("Order_Placed");
+
+                    b.Property<decimal>("Order_Total");
+
+                    b.HasKey("Order_Id");
+
+                    b.ToTable("Orders");
+                });
+
+            modelBuilder.Entity("MobileShop.Data.Models.OrderDetail", b =>
+                {
+                    b.Property<int>("OrderDetail_Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("OrderDetail_Amount");
+
+                    b.Property<decimal>("OrderDetail_Price");
+
+                    b.Property<int>("Order_Id");
+
+                    b.Property<int>("Product_Id");
+
+                    b.HasKey("OrderDetail_Id");
+
+                    b.HasIndex("Order_Id");
+
+                    b.HasIndex("Product_Id");
+
+                    b.ToTable("OrderDetails");
                 });
 
             modelBuilder.Entity("MobileShop.Data.Models.Product", b =>
@@ -133,6 +181,19 @@ namespace MobileShop.Migrations
                     b.HasIndex("Product_Id");
 
                     b.ToTable("ShoppingCartItems");
+                });
+
+            modelBuilder.Entity("MobileShop.Data.Models.OrderDetail", b =>
+                {
+                    b.HasOne("MobileShop.Data.Models.Order", "Order")
+                        .WithMany("OrderLines")
+                        .HasForeignKey("Order_Id")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("MobileShop.Data.Models.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("Product_Id")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("MobileShop.Data.Models.Product", b =>

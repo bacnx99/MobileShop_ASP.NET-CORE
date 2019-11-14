@@ -14679,11 +14679,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\MobileShop\\MobileShop\\MobileShop.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\MobileShop\\MobileShop\\MobileShop.csproj",
       "projectName": "MobileShop",
-      "projectPath": "E:\\MobileShop\\MobileShop\\MobileShop.csproj",
+      "projectPath": "C:\\Users\\Admin\\Desktop\\MobileShop\\MobileShop\\MobileShop.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "E:\\MobileShop\\MobileShop\\obj\\",
+      "outputPath": "C:\\Users\\Admin\\Desktop\\MobileShop\\MobileShop\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

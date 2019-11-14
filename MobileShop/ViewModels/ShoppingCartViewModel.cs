@@ -10,5 +10,13 @@ namespace MobileShop.ViewModels
     {
         public ShoppingCart ShoppingCart { get; set; }
         public decimal ShoppingCartTotal { get; set; }
+
+        public string Order_Name { get; set; }
+
+        public string Order_Address { get; set; }
+
+        public string Order_PhoneNumber { get; set; }
+
+        public string Order_Email { get; set; }
     }
 }

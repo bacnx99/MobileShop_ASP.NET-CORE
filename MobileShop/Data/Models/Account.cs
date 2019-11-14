@@ -29,7 +29,7 @@ namespace MobileShop.Data.Models
 
         [Required(ErrorMessage = "Số điện thoại không được để trống.")]
         [RegularExpression(@"^[0-9]", ErrorMessage = "Số điện thoại không hợp lệ.")]
-        public string Account_Phone { get; set; }
+        public string Account_PhoneNumber { get; set; }
 
         public string Account_Sex { get; set; }
 

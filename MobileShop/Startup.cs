@@ -38,7 +38,7 @@ namespace MobileShop
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped(sp => ShoppingCart.GetCart(sp));
-            //services.AddTransient<IOrderRepository, OrderRepository>();
+            services.AddTransient<IOrderRepository, OrderRepository>();
 
             services.AddMvc();
             services.AddDistributedMemoryCache();
