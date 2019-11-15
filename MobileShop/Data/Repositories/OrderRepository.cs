@@ -18,6 +18,8 @@ namespace MobileShop.Data.Repositories
             _shoppingCart = shoppingCart;
         }
 
+        public IEnumerable<Order> Orders => _appDbContext.Orders;
+
         public void CreateOrder(Order order)
         {
             order.Order_Placed = DateTime.Now;

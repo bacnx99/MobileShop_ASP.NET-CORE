@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Order>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+<link href="~/Admin/css/OrderManagement/IndexCSS.css" rel="stylesheet" />
+<div class="wrapper-content">
+    <h2>QUẢN LÝ ĐƠN HÀNG</h2>
+    @if (TempData["CantBlock"] != null)
+    {
+        <p style="color: red; text-align: center; margin-bottom: 5px;">@TempData["CantBlock"]</p>
+    }
+    @if (TempData["ChangePasswordSuccess"] != null)
+    {
+        <p style="color: green; text-align: center; margin-bottom: 5px;">@TempData["ChangePasswordSuccess"]</p>
+    }
+    @if (TempData["BlockSuccess"] != null)
+    {
+        <p style="color: green; text-align: center; margin-bottom: 5px;">@TempData["BlockSuccess"]</p>
+    }
+    @if (TempData["UnblockSuccess"] != null)
+    {
+        <p style="color: green; text-align: center; margin-bottom: 5px;">@TempData["UnblockSuccess"]</p>
+    }
+    <table>
+        <tr>
+            <th>#</th>
+            <th>Mã đơn hàng</th>
+            <th>Ngày đặt</th>
+            <th>Tổng tiền</th>
+            <th>Trạng thái</th>
+            <th>Hành động</th>
+        </tr>
+        @{int i = 1;}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@i</td>
+                <td>@item.Order_Id</td>
+                <td>@item.Order_Placed</td>
+                <td>@item.Order_Total</td>
+                @if (item.IsCompleted == true)
+                {
+                    <td>Hoàn thành</td>
+                }
+                else
+                {
+                    <td>Chưa hoàn thành</td>
+                }
+                <td>
+                    <form asp-action="Detail" asp-route-id="@item.Order_Id" method="GET">
+                        <button class="action-detail" type="submit">
+                            <i class="fas fa-info-circle"></i>
+                            Chi tiết
+                        </button>
+                    </form>
+                    @if (item.IsCompleted == false)
+                    {
+                        <form asp-action="Complete" asp-route-id="@item.Order_Id" method="POST">
+                            <button class="action-complete" type="submit" onclick="return confirm('Bạn có chắc muốn hoàn thành đơn hàng này?');">
+                                <i class="fas fa-check-double"></i>
+                                Hoàn thành
+                            </button>
+                        </form>
+                    }
+                </td>
+            </tr>
+            i++;
+        }
+    </table>
+</div>

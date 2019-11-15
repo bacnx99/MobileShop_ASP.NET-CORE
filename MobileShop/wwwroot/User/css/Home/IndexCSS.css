@@ -110,9 +110,13 @@
 .product-row {
     padding: 10px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
 }
+    
+    .product-row ul {
+        width: 100%;
+    }
 
     .product-row ul li {
         list-style: none;
