@@ -20,6 +20,22 @@ namespace MobileShop.Data.Repositories
 
         public IEnumerable<Order> Orders => _appDbContext.Orders;
 
+        public Order GetOrderById(int id)
+        {
+            return _appDbContext.Orders.Find(id);
+        }
+
+        public Order Complete(int id)
+        {
+            Order o = _appDbContext.Orders.Find(id);
+            if (o != null)
+            {
+                o.IsCompleted = true;
+                _appDbContext.SaveChanges();
+            }
+            return o;
+        }
+
         public void CreateOrder(Order order)
         {
             order.Order_Placed = DateTime.Now;

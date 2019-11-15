@@ -9,6 +9,11 @@ namespace MobileShop.Data.Interfaces
     public interface IOrderRepository
     {
         IEnumerable<Order> Orders { get; }
+
+        Order GetOrderById(int id);
+
+        Order Complete(int id);
+
         void CreateOrder(Order order);
     }
 }

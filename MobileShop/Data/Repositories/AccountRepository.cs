@@ -64,15 +64,8 @@ namespace MobileShop.Data.Repositories
             Account a = _appDbContext.Accounts.Find(id);
             if (a != null)
             {
-                //if (a.Account_Id == id)
-                //{
-                //    return null;
-                //}
-                //else
-                //{
-                    a.Account_IsBlocked = true;
-                    _appDbContext.SaveChanges();
-                //}
+                a.Account_IsBlocked = true;
+                _appDbContext.SaveChanges();
             }
             return a;
         }

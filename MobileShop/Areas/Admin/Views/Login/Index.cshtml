@@ -13,7 +13,7 @@
 <body>
     <div class="login-box">
         <h2>Admin Login</h2>
-        <form asp-controller="Admin" asp-action="Login" method="POST">
+        <form asp-action="Index" method="POST">
             @if (ViewBag.Error != null)
             {
                 <span style="color: red; display: block; margin-bottom: 10px;">@ViewBag.Error</span>

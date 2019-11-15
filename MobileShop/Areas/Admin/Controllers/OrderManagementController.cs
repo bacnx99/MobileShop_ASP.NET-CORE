@@ -5,9 +5,12 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MobileShop.Data.Interfaces;
+using MobileShop.Data.Models;
 
 namespace MobileShop.Areas.Admin.Controllers
 {
+    [Area("Admin")]
+    [Route("Admin/OrderManagement")]
     public class OrderManagementController : Controller
     {
         private readonly IOrderRepository _orderRepository;
@@ -16,14 +19,33 @@ namespace MobileShop.Areas.Admin.Controllers
         {
             _orderRepository = orderRepository;
         }
-        [Area("Admin")]
-        [Route("Admin/OrderManagement")]
+
+        [Route("")]
+        [Route("Index")]
         public IActionResult Index()
         {
             if (HttpContext.Session.GetString("UserID") != null)
             {
                 ViewBag.FullName = HttpContext.Session.GetString("FullName");
                 return View(_orderRepository.Orders);
+            }
+            else
+            {
+                return RedirectToAction("Index", "Login");
+            }
+        }
+
+        [Route("Complete/{id}")]
+        [HttpPost]
+        public IActionResult Complete(int id)
+        {
+            if (HttpContext.Session.GetString("UserID") != null)
+            {
+                Order order = _orderRepository.GetOrderById(id);
+
+                _orderRepository.Complete(id);
+                TempData["CompleteSuccess"] = "Hoàn thành đơn hàng: Mã đơn hàng - " + order.Order_Id + " thành công.";
+                return RedirectToAction("Index");
             }
             else
             {

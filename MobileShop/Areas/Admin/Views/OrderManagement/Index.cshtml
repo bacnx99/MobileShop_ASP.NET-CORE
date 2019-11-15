@@ -6,22 +6,11 @@
 <link href="~/Admin/css/OrderManagement/IndexCSS.css" rel="stylesheet" />
 <div class="wrapper-content">
     <h2>QUẢN LÝ ĐƠN HÀNG</h2>
-    @if (TempData["CantBlock"] != null)
+    @if (TempData["CompleteSuccess"] != null)
     {
-        <p style="color: red; text-align: center; margin-bottom: 5px;">@TempData["CantBlock"]</p>
+        <p style="color: green; text-align: center; margin-bottom: 5px;">@TempData["CompleteSuccess"]</p>
     }
-    @if (TempData["ChangePasswordSuccess"] != null)
-    {
-        <p style="color: green; text-align: center; margin-bottom: 5px;">@TempData["ChangePasswordSuccess"]</p>
-    }
-    @if (TempData["BlockSuccess"] != null)
-    {
-        <p style="color: green; text-align: center; margin-bottom: 5px;">@TempData["BlockSuccess"]</p>
-    }
-    @if (TempData["UnblockSuccess"] != null)
-    {
-        <p style="color: green; text-align: center; margin-bottom: 5px;">@TempData["UnblockSuccess"]</p>
-    }
+
     <table>
         <tr>
             <th>#</th>
