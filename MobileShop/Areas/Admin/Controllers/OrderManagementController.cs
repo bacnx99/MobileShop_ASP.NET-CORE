@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MobileShop.Data.Interfaces;
 using MobileShop.Data.Models;
+using MobileShop.Data.ViewModels;
 
 namespace MobileShop.Areas.Admin.Controllers
 {
@@ -45,6 +46,26 @@ namespace MobileShop.Areas.Admin.Controllers
 
                 _orderRepository.Complete(id);
                 TempData["CompleteSuccess"] = "Hoàn thành đơn hàng: Mã đơn hàng - " + order.Order_Id + " thành công.";
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return RedirectToAction("Index", "Login");
+            }
+        }
+
+        [Route("Detail/{id}")]
+        [HttpGet]
+        public IActionResult Detail(int id)
+        {
+            if (HttpContext.Session.GetString("UserID") != null)
+            {
+                OrderListViewModel vm = new OrderListViewModel();
+                vm.Orders = _orderRepository.Orders;
+                //vm.OrderDetails = _orderRepository.Orders.
+                
+                //_orderRepository.Complete(id);
+                
                 return RedirectToAction("Index");
             }
             else

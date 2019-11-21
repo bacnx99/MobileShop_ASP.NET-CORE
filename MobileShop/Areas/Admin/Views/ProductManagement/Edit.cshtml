@@ -44,8 +44,11 @@
             </div>
         </div>
         <div class="input-group">
-            <span asp-for="Product_ImageThumbnail">Hình ảnh</span>
-            <input asp-for="Product_ImageThumbnail" type="file" accept="image/*" required>
+            <span asp-for="Product_ImageThumbnail">
+                Hình ảnh / Thay đổi
+                <input id="Change" type="checkbox" style="display: inline-block;"/>
+            </span>
+            <input asp-for="Product_ImageThumbnail" type="file" accept="image/*" disabled>
         </div>
         <div class="input-group">
             <span asp-for="Product_ShortDescription">Mô tả ngắn</span>
@@ -142,5 +145,10 @@
     document.getElementById('Product_SDCardSupport').onchange = function () {
         document.getElementById('Product_SDCard').disabled = !this.checked;
         document.getElementById('Product_SDCard').value = '';
+    };
+
+
+    document.getElementById('Change').onchange = function () {
+        document.getElementById('Product_ImageThumbnail').disabled = !this.checked;
     };
 </script>

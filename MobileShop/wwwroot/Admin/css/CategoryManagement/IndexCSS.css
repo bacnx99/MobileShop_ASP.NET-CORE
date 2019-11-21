@@ -28,7 +28,7 @@
 
     .wrapper-content tr {
         display: grid;
-        grid-template-columns: 50px 250px 400px 198px;
+        grid-template-columns: 50px 220px 330px 100px 198px;
     }
 
         .wrapper-content tr:nth-child(2n+1) {

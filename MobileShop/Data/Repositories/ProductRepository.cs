@@ -53,9 +53,12 @@ namespace MobileShop.Data.Repositories
                 p.Product_InStock = product.Product_InStock;
                 p.Product_IsPreferred = product.Product_IsPreferred;
 
-                AddPhoto(product, photo);
-                p.Product_ImageThumbnail = product.Product_ImageThumbnail;
-
+                if (photo != null)
+                {
+                    AddPhoto(product, photo);
+                    p.Product_ImageThumbnail = product.Product_ImageThumbnail;
+                }
+                
                 p.Product_OperatingSystem = product.Product_OperatingSystem;
                 p.Product_Chipset = product.Product_Chipset;
                 p.Product_CPUSpeed = product.Product_CPUSpeed;
@@ -68,6 +71,8 @@ namespace MobileShop.Data.Repositories
                 p.Product_SDCard = product.Product_SDCard;
                 p.Product_FrontCamera = product.Product_FrontCamera;
                 p.Product_RearCamera = product.Product_RearCamera;
+                p.Category_Id = product.Category_Id;
+               
 
                 _appDbContext.SaveChanges();
 

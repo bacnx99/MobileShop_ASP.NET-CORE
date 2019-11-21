@@ -9,7 +9,7 @@ namespace MobileShop.Migrations
             migrationBuilder.AddColumn<bool>(
                 name: "IsCompleted",
                 table: "Orders",
-                nullable: true);
+                nullable: false);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

@@ -76,7 +76,7 @@ using MobileShop.Data.Models;
 #line default
 #line hidden
             BeginContext(102, 75, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "a5ccccfa180a49188f6cf759faba7618", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "feaa510755d741b39c28e53569cf52c1", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -137,7 +137,7 @@ using MobileShop.Data.Models;
             WriteLiteral("</td>\n                <td>\n                    ");
             EndContext();
             BeginContext(685, 78, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "53fd18f46f344252b0cba5bd5b255060", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "d4e0930dacc842598d2fb44a8567d0ae", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -268,7 +268,7 @@ AddHtmlAttributeValue("", 704, product.Product_ImageThumbnail, 704, 31, false);
             WriteLiteral("                    <td>\n                        ");
             EndContext();
             BeginContext(1854, 325, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "217b178040534d3d9c51c06427b4b9a0", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "802e82c93dfc4c73b1fc9058cc9e3f90", async() => {
                 BeginContext(1928, 244, true);
                 WriteLiteral("\n                            <button type=\"submit\" class=\"action-detail\">\n                                <i class=\"fas fa-info-circle\"></i>\n                                Chi tiết\n                            </button>\n                        ");
                 EndContext();
@@ -307,7 +307,7 @@ AddHtmlAttributeValue("", 704, product.Product_ImageThumbnail, 704, 31, false);
             WriteLiteral("\n                        ");
             EndContext();
             BeginContext(2204, 309, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9961061db7994040af99ecac3513f494", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "458bc538443e49aabf254c97c2332c6b", async() => {
                 BeginContext(2276, 230, true);
                 WriteLiteral("\n                            <button type=\"submit\" class=\"action-edit\">\n                                <i class=\"fas fa-edit\"></i>\n                                Sửa\n                            </button>\n                        ");
                 EndContext();
@@ -346,7 +346,7 @@ AddHtmlAttributeValue("", 704, product.Product_ImageThumbnail, 704, 31, false);
             WriteLiteral("\n                        ");
             EndContext();
             BeginContext(2538, 389, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f49d89e0e5214e2fbaa0211a30a3cb36", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d42aa3f785de4e91a2aa5fe1c03b0158", async() => {
                 BeginContext(2613, 307, true);
                 WriteLiteral(@"
                             <button type=""submit"" class=""action-delete"" onclick=""return confirm('Bạn có chắc chắn muốn xóa sản phẩm này ?');"">

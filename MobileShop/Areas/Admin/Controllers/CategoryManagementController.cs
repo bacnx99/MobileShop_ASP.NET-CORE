@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MobileShop.Data.Interfaces;
 using MobileShop.Data.Models;
+using MobileShop.ViewModels;
 
 namespace MobileShop.Areas.Admin.Controllers
 {
@@ -14,10 +15,12 @@ namespace MobileShop.Areas.Admin.Controllers
     public class CategoryManagementController : Controller
     {
         private readonly ICategoryRepository _categoryRepository;
+        private readonly IProductRepository _productRepository;
 
-        public CategoryManagementController(ICategoryRepository categoryRepository)
+        public CategoryManagementController(ICategoryRepository categoryRepository, IProductRepository productRepository)
         {
             _categoryRepository = categoryRepository;
+            _productRepository = productRepository;
         }
         [Route("")]
         [Route("Index")]
@@ -26,6 +29,14 @@ namespace MobileShop.Areas.Admin.Controllers
             if (HttpContext.Session.GetString("UserID") != null)
             {
                 ViewBag.FullName = HttpContext.Session.GetString("FullName");
+
+                var query = _productRepository.Products
+                .GroupBy(item => item.Category_Id)
+                .Select(n => n.Count());
+
+                ViewBag.query = query;
+
+               
                 return View(_categoryRepository.Categories);
             }
             else
@@ -56,7 +67,7 @@ namespace MobileShop.Areas.Admin.Controllers
                 ViewBag.FullName = HttpContext.Session.GetString("FullName");
                 if (ModelState.IsValid)
                 {
-                    Category NewCategory = _categoryRepository.Add(category);
+                    _categoryRepository.Add(category);
                     return RedirectToAction("Index");
                 }
                 return View();

@@ -103,7 +103,7 @@ namespace MobileShop.Areas.Admin.Controllers
                 if (ModelState.IsValid)
                 {
                     _productRepository.Edit(product, id, Product_ImageThumbnail);
-                    return Redirect("Index");
+                    return RedirectToAction("Index");
                 }
                 return View();
             }
