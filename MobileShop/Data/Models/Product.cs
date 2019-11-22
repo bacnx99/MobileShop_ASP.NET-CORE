@@ -15,9 +15,7 @@ namespace MobileShop.Data.Models
 
         public decimal Product_Price { get; set; }
 
-        public string Product_ShortDescription { get; set; }
-
-        public string Product_LongDescription { get; set; }
+        public string Product_Description { get; set; }
 
         public bool Product_InStock { get; set; }
 

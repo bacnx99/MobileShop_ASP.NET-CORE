@@ -123,6 +123,8 @@ namespace MobileShop.Migrations
 
                     b.Property<string>("Product_Chipset");
 
+                    b.Property<string>("Product_Description");
+
                     b.Property<string>("Product_FrontCamera");
 
                     b.Property<string>("Product_GPU");
@@ -132,8 +134,6 @@ namespace MobileShop.Migrations
                     b.Property<bool>("Product_InStock");
 
                     b.Property<bool>("Product_IsPreferred");
-
-                    b.Property<string>("Product_LongDescription");
 
                     b.Property<string>("Product_Name");
 
@@ -154,8 +154,6 @@ namespace MobileShop.Migrations
                     b.Property<string>("Product_ScreenResolution");
 
                     b.Property<string>("Product_ScreenWidth");
-
-                    b.Property<string>("Product_ShortDescription");
 
                     b.HasKey("Product_Id");
 

@@ -48,8 +48,7 @@ namespace MobileShop.Data.Repositories
 
                 p.Product_Name = product.Product_Name;
                 p.Product_Price = product.Product_Price;
-                p.Product_ShortDescription = product.Product_ShortDescription;
-                p.Product_LongDescription = product.Product_LongDescription;
+                p.Product_Description = product.Product_Description;
                 p.Product_InStock = product.Product_InStock;
                 p.Product_IsPreferred = product.Product_IsPreferred;
 
