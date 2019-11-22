@@ -122,7 +122,15 @@ namespace MobileShop.Areas.Admin.Controllers
             ViewBag.FullName = HttpContext.Session.GetString("FullName");
             if (HttpContext.Session.GetString("UserID") != null)
             {
-                _categoryRepository.Delete(id);
+                try
+                {
+                    _categoryRepository.Delete(id);
+                }
+                catch
+                {
+                    TempData["CantDelele"] = "Không thể xóa loại sản phẩm này vì còn sản phẩm trong loại.";
+                    return RedirectToAction("Index");
+                }
                 return RedirectToAction("Index");
             }
             else

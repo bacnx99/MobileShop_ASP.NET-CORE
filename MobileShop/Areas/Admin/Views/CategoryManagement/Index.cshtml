@@ -7,6 +7,10 @@
 <link href="~/Admin/css/CategoryManagement/IndexCSS.css" rel="stylesheet" />
 <div class="wrapper-content">
     <h2>QUẢN LÝ LOẠI SẢN PHẨM</h2>
+    @if (TempData["CantDelele"] != null)
+    {
+        <p style="color: red; text-align: center; margin-bottom: 5px;">@TempData["CantDelele"]</p>
+    }
     <table>
         <tr>
             <th>#</th>

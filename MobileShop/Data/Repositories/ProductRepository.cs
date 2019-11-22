@@ -86,6 +86,11 @@ namespace MobileShop.Data.Repositories
 
         public Product Delete(int id)
         {
+            OrderDetail o = _appDbContext.OrderDetails.Where(x => x.Product_Id == id).FirstOrDefault();
+            if (o != null)
+            {
+                return null;
+            }
             Product p = _appDbContext.Products.Find(id);
             if (p != null)
             {

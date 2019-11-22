@@ -7,6 +7,10 @@
 
 <div class="wrapper-content">
     <h2>TẤT CẢ SẢN PHẨM</h2>
+    @if (TempData["CantDelete"] != null)
+    {
+        <p style="color: red; text-align: center; margin-bottom: 5px;">@TempData["CantDelete"]</p>
+    }
     <table>
         <tr>
             <th>#</th>
