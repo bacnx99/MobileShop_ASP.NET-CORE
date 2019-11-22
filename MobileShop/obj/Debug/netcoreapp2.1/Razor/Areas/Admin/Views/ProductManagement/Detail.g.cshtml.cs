@@ -29,7 +29,7 @@ using MobileShop.Data.Models;
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3e4204c99fcd07f009858daeb38fd818df8c5dc3", @"/Areas/Admin/Views/ProductManagement/Detail.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6f8282febc87a857b1dd3c8924bd5c37fdb8cfb2", @"/Areas/Admin/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"c7cb4f6b7a7aca57832721f64923c52f93d3a6df", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     public class Areas_Admin_Views_ProductManagement_Detail : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Product>
     {
         #pragma warning disable 1998

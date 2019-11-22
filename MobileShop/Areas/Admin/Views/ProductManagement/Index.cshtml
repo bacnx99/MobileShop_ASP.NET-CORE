@@ -3,6 +3,7 @@
     ViewData["Title"] = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
+@model PagedList.Core.IPagedList<Product> 
 <link href="~/Admin/css/ProductManagement/IndexCSS.css" rel="stylesheet" />
 
 <div class="wrapper-content">
@@ -23,7 +24,7 @@
             <th>Hành động</th>
         </tr>
         @{int i = 1;}
-        @foreach (var product in Model.Products)
+        @foreach (var product in Model)
         {
             <tr>
                 <td>@i</td>
@@ -31,7 +32,7 @@
                     <img src="~/images/@product.Product_ImageThumbnail" alt="image" witdh="10%" />
                 </td>
                 <td>@product.Product_Name</td>
-                @foreach (var category in Model.Categories)
+                @foreach (var category in ViewBag.Categories)
                 {
                     if (product.Category_Id == category.Category_Id)
                     {
@@ -83,4 +84,5 @@
             i++;
         }
     </table>
+    <pager list="@Model" asp-controller="ProductManagement" asp-action="Index" />
 </div>

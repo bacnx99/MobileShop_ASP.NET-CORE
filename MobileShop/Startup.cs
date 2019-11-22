@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -43,6 +44,7 @@ namespace MobileShop
             services.AddMvc();
             services.AddDistributedMemoryCache();
             services.AddSession();
+            services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -74,7 +76,7 @@ namespace MobileShop
                 routes.MapAreaRoute(
                   name: "areaAdmin",
                   areaName: "Admin",
-                  template: "Admin/{controller=Home}/{action=Index}/{id?}"
+                  template: "{controller=Home}/{action=Index}/{id?}"
                 );
             });
         }

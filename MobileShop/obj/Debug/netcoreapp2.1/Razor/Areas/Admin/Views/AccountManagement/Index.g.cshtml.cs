@@ -29,7 +29,7 @@ using MobileShop.Data.Models;
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"db0200404eb125a137828b0867f7bb50f9a8b52b", @"/Areas/Admin/Views/AccountManagement/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6f8282febc87a857b1dd3c8924bd5c37fdb8cfb2", @"/Areas/Admin/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"c7cb4f6b7a7aca57832721f64923c52f93d3a6df", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     public class Areas_Admin_Views_AccountManagement_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<Account>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("href", new global::Microsoft.AspNetCore.Html.HtmlString("~/Admin/css/AccountManagement/IndexCSS.css"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -77,7 +77,7 @@ using MobileShop.Data.Models;
             WriteLiteral("\n");
             EndContext();
             BeginContext(131, 75, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "5346d11d3b594e22a0d4bd7499645ce7", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "9803ffda56d745ac81d046e9a5012e1e", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -358,7 +358,7 @@ using MobileShop.Data.Models;
             WriteLiteral("                </td>\n                <td>\n                    ");
             EndContext();
             BeginContext(2637, 306, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5cbbc07b865549dbac09537e8fbd1b23", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "85fe3bdc15b14d6784560820a061f6a1", async() => {
                 BeginContext(2716, 220, true);
                 WriteLiteral("\n                        <button class=\"action-reset\" type=\"submit\">\n                            <i class=\"fas fa-redo\"></i>\n                            Đổi mật khẩu\n                        </button>\n                    ");
                 EndContext();
@@ -406,7 +406,7 @@ using MobileShop.Data.Models;
             WriteLiteral("                        ");
             EndContext();
             BeginContext(3048, 391, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "82d59300614a450b8b528580d0dba872", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f374e1c397914a5f9c1c6bace04786b8", async() => {
                 BeginContext(3119, 313, true);
                 WriteLiteral(@"
                             <button class=""action-block"" type=""submit"" onclick=""return confirm('Bạn có chắc muốn khóa tài khoản này?');"">
@@ -460,7 +460,7 @@ using MobileShop.Data.Models;
             WriteLiteral("                        ");
             EndContext();
             BeginContext(3533, 397, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "75d9b9f889ad49158b720a53c00e53f0", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b190d77beca249828f360619661dd389", async() => {
                 BeginContext(3606, 317, true);
                 WriteLiteral(@"
                             <button class=""action-unblock"" type=""submit"" onclick=""return confirm('Bạn có chắc muốn mở khóa tài khoản này?');"">

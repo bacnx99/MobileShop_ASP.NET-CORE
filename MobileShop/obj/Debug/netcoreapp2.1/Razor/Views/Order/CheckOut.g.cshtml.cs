@@ -75,7 +75,7 @@ using MobileShop.Data.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(103, 65, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "39d28bc5bebe465794efc1ffb0b662c1", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "bb5ec8153de74573b81393868c820908", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -94,7 +94,7 @@ using MobileShop.Data.Models;
             WriteLiteral("\r\n<div class=\"checkout\">\r\n    ");
             EndContext();
             BeginContext(198, 60, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "2f841df0f0de4530930ed066f5ef3d64", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "63c96093b71b43fdb301239dbb304661", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -113,7 +113,7 @@ using MobileShop.Data.Models;
             WriteLiteral("\r\n    <h2>THÀNH CÔNG !</h2>\r\n    <p>Chúng tôi sẽ gọi cho bạn để xác nhận giao dịch.</p>\r\n    ");
             EndContext();
             BeginContext(351, 73, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0b3d74e0a85d4565acb065e36e246441", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8ac3b7943f944813af3668d1beaceb7f", async() => {
                 BeginContext(395, 25, true);
                 WriteLiteral("ĐẾN TRANG CHỦ Mobile Shop");
                 EndContext();

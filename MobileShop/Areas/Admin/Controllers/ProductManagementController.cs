@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using MobileShop.Data.Interfaces;
 using MobileShop.Data.Models;
 using MobileShop.ViewModels;
+using PagedList.Core;
 
 namespace MobileShop.Areas.Admin.Controllers
 {
@@ -25,15 +26,15 @@ namespace MobileShop.Areas.Admin.Controllers
         }
         [Route("")]
         [Route("Index")]
-        public IActionResult Index()
+        public IActionResult Index(int page = 1)
         {   
             if (HttpContext.Session.GetString("UserID") != null)
             {
                 ViewBag.FullName = HttpContext.Session.GetString("FullName");
-                ProductListViewModel vm = new ProductListViewModel();
-                vm.Products = _productRepository.Products;
-                vm.Categories = _categoryRepository.Categories;
-                return View(vm);
+
+                ViewBag.Categories = _categoryRepository.Categories;
+                PagedList<Product> model = new PagedList<Product>(_productRepository.Products, page, 10);
+                return View("Index", model);
             }
             else
             {

@@ -20,7 +20,7 @@
         <div class="input-box">
             <div class="input-group">
                 <span asp-for="Category_Id">Loại sản phẩm</span>
-                <select asp-for="Category_Id">
+                <select asp-for="Category_Id" style="width: 100%;">
                     @foreach (var category in ViewBag.categories)
                     {
                         <option value="@category.Category_Id">@category.Category_Name</option>
@@ -29,7 +29,7 @@
             </div>
             <div class="input-group">
                 <span asp-for="Product_Price">Giá</span>
-                <input asp-for="Product_Price" type="number" min="0" value="0">
+                <input asp-for="Product_Price" type="number" min="0" value="@(Convert.ToDouble(Model.Product_Price))">
             </div>
             <div class="input-group">
                 <div class="checkbox-box">
@@ -42,7 +42,7 @@
                     </div>
                     <div class="checkbox-group">
                         <span asp-for="Product_IsPreferred">Ưa thích</span>
-                        <input asp-for="Product_IsPreferred" type="checkbox">
+                        <input asp-for="Product_IsPreferred" type="checkbox" >
                     </div>
                 </div>
             </div>

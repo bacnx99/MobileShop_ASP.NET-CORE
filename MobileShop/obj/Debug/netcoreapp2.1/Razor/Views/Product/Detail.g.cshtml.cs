@@ -67,7 +67,7 @@ using MobileShop.Data.Models;
 #line default
 #line hidden
             BeginContext(99, 65, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "3666fad5a8f04314b7fb4cb5e43117dd", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "61e811c56be84495b00277427154d2e7", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -319,7 +319,7 @@ using MobileShop.Data.Models;
             WriteLiteral("</td>\n                    </tr>\n                </table>\n            </div>\n            ");
             EndContext();
             BeginContext(4899, 118, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "33150327053f4fcfa7518952cc6c731f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "278c3b08b95a4243a420b812f55e54d0", async() => {
                 BeginContext(4996, 17, true);
                 WriteLiteral("THÊM VÀO GIỎ HÀNG");
                 EndContext();

@@ -1,8 +1,9 @@
-﻿@model IEnumerable<Order>
+﻿@model PagedList.Core.IPagedList<Order>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
+
 <link href="~/Admin/css/OrderManagement/IndexCSS.css" rel="stylesheet" />
 <div class="wrapper-content">
     <h2>QUẢN LÝ ĐƠN HÀNG</h2>
@@ -52,4 +53,5 @@
             i++;
         }
     </table>
+    <pager list="@Model" asp-controller="OrderManagement" asp-action="Index" />
 </div>
