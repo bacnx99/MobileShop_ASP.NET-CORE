@@ -59,26 +59,26 @@
                 {
                     <td>&nbsp;</td>
                 }
-                    <td>
-                        <form asp-action="Detail" asp-route-id="@product.Product_Id" method="GET">
-                            <button type="submit" class="action-detail">
-                                <i class="fas fa-info-circle"></i>
-                                Chi tiết
-                            </button>
-                        </form>
-                        <form asp-action="Edit" asp-route-id="@product.Product_Id" method="GET">
-                            <button type="submit" class="action-edit">
-                                <i class="fas fa-edit"></i>
-                                Sửa
-                            </button>
-                        </form>
-                        <form asp-action="Delete" asp-route-id="@product.Product_Id" method="POST">
-                            <button type="submit" class="action-delete" onclick="return confirm('Bạn có chắc chắn muốn xóa sản phẩm này ?');">
-                                <i class="fas fa-trash-alt"></i>
-                                Xóa
-                            </button>
-                        </form>
-                    </td>
+                <td>
+                    <form asp-action="Detail" asp-route-id="@product.Product_Id" method="GET">
+                        <button type="submit" class="action-detail">
+                            <i class="fas fa-info-circle"></i>
+                            Chi tiết
+                        </button>
+                    </form>
+                    <form asp-action="Edit" asp-route-id="@product.Product_Id" method="GET">
+                        <button type="submit" class="action-edit">
+                            <i class="fas fa-edit"></i>
+                            Sửa
+                        </button>
+                    </form>
+                    <form asp-action="Delete" asp-route-id="@product.Product_Id" method="POST">
+                        <button type="submit" class="action-delete" onclick="return confirm('Bạn có chắc chắn muốn xóa sản phẩm này ?');">
+                            <i class="fas fa-trash-alt"></i>
+                            Xóa
+                        </button>
+                    </form>
+                </td>
             </tr>
             i++;
         }

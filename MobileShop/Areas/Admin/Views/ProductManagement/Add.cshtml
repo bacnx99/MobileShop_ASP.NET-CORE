@@ -9,6 +9,10 @@
 <div class="wrapper-content">
     <form class="form" asp-action="Add" method="POST" enctype="multipart/form-data">
         <h2>THÊM MỚI SẢN PHẨM</h2>
+        @if (TempData["NotImage"] != null)
+        {
+            <p style="color: red; text-align: center; margin-bottom: 5px;">@TempData["NotImage"]</p>
+        }
         <div class="input-group">
             <span asp-for="Product_Name">Tên sản phẩm</span>
             <input asp-for="Product_Name" type="text" required>
@@ -55,7 +59,6 @@
             <span asp-for="Product_LongDescription">Mô tả dài</span>
             <input asp-for="Product_LongDescription" type="text" required>
         </div>
-
         <h3>THÔNG TIN CHI TIẾT SẢN PHẨM</h3>
         <div class="label-input-box">
             <p>Hệ điều hành - CPU</p>
@@ -80,7 +83,6 @@
                 </section>
             </div>
         </div>
-
         <div class="label-input-box">
             <p>Màn hình</p>
             <div class="label-input">
@@ -94,7 +96,6 @@
                 </section>
             </div>
         </div>
-
         <div class="label-input-box">
             <p>Bộ nhớ & Lưu trữ</p>
             <div class="label-input">
@@ -118,7 +119,6 @@
                 </section>
             </div>
         </div>
-
         <div class="label-input-box">
             <p>Camera</p>
             <div class="label-input">

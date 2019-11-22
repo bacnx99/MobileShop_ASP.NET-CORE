@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
@@ -61,12 +62,14 @@ namespace MobileShop.Areas.Admin.Controllers
             if (HttpContext.Session.GetString("UserID") != null)
             {
                 ViewBag.FullName = HttpContext.Session.GetString("FullName");
-                if (ModelState.IsValid)
+                string extention = Path.GetExtension(Product_ImageThumbnail.FileName);
+                if (extention != ".jpg" && extention != ".png")
                 {
-                    _productRepository.Add(product, Product_ImageThumbnail);
-                    return RedirectToAction("Index");
+                    TempData["NotImage"] = "Tệp tải lên phải là ảnh .jpg hoặc .png.";
+                    return RedirectToAction("Add");
                 }
-                return View();
+                _productRepository.Add(product, Product_ImageThumbnail);
+                return RedirectToAction("Index");
             }
             else
             {
@@ -100,12 +103,18 @@ namespace MobileShop.Areas.Admin.Controllers
             if (HttpContext.Session.GetString("UserID") != null)
             {
                 ViewBag.FullName = HttpContext.Session.GetString("FullName");
-                if (ModelState.IsValid)
+                string extention = null;
+                if (Product_ImageThumbnail != null)
                 {
-                    _productRepository.Edit(product, id, Product_ImageThumbnail);
-                    return RedirectToAction("Index");
+                    extention = Path.GetExtension(Product_ImageThumbnail.FileName);
                 }
-                return View();
+                if (extention != ".jpg" && extention != ".png" && extention != null)
+                {
+                    TempData["NotImage"] = "Tệp tải lên phải là ảnh .jpg hoặc .png.";
+                    return RedirectToAction("Edit");
+                }
+                _productRepository.Edit(product, id, Product_ImageThumbnail);
+                return RedirectToAction("Index");
             }
             else
             {

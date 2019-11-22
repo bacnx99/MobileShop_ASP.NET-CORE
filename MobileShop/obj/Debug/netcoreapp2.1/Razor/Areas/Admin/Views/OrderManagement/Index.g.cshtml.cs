@@ -70,7 +70,7 @@ using MobileShop.Data.Models;
 #line default
 #line hidden
             BeginContext(132, 73, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "2c79e843826e4b53bc0892072739be64", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "447c3eec39df4d098afdf64894e32e7f", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -185,7 +185,7 @@ using MobileShop.Data.Models;
             WriteLiteral("                <td>\r\n                    ");
             EndContext();
             BeginContext(1021, 305, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0727dc3ef1c14268a640e2b24eeeee11", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6328da4483fe4618af71eda077221dc2", async() => {
                 BeginContext(1090, 229, true);
                 WriteLiteral("\r\n                        <button class=\"action-detail\" type=\"submit\">\r\n                            <i class=\"fas fa-info-circle\"></i>\r\n                            Chi tiết\r\n                        </button>\r\n                    ");
                 EndContext();
@@ -233,7 +233,7 @@ using MobileShop.Data.Models;
             WriteLiteral("                        ");
             EndContext();
             BeginContext(1428, 404, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "29d09f0ffd324019834f562d79978a95", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c1406721e1404601b95946453c5df93d", async() => {
                 BeginContext(1500, 325, true);
                 WriteLiteral(@"
                             <button class=""action-complete"" type=""submit"" onclick=""return confirm('Bạn có chắc muốn hoàn thành đơn hàng này?');"">
