@@ -14,7 +14,7 @@
             <i class="fas fa-phone-alt"></i>
             Hotline: 1900.0702
         </span>
-        <span style="float: right;">           
+        <span style="float: right;">
             <a href="#" style="text-decoration: none; color: #000;">
                 <i class="fas fa-envelope"></i>
                 Liên hệ
@@ -42,7 +42,6 @@
             <img src="https://cdn.cellphones.com.vn/media/ltsoft/promotion/thu-c_-galaxy-note-10-_-10_-_2_-750x350_2_1911.png" alt="banner" />
             <img src="https://cdn.cellphones.com.vn/media/ltsoft/promotion/Right-banner_iphone_11_111.png" alt="banner" />
         </div>
-        
     </div>
     <div class="menu">
         <h4><i class="fas fa-list"></i>     Danh mục sản phẩm</h4>
@@ -54,23 +53,23 @@
         </ul>
     </div>
     @*<div class="filter-option">
-        <div class="left">
-            <ul>
-                <li><strong>Chọn mức giá:</strong></li>
-                <li><a href="#">Dưới 4 triệu</a></li>
-                <li><a href="#">4 - 7 triệu</a></li>
-                <li><a href="#">7- 12 triệu</a></li>
-                <li><a href="#">Trên 12 triệu</a></li>
-            </ul>
-        </div>
-        <div class="right">
-            <ul>
-                <li><strong>Sắp xếp theo:</strong></li>
-                <li><a href="#">Giá thấp đến cao</a></li>
-                <li><a href="#">Giá cao đến thấp</a></li>
-            </ul>
-        </div>
-    </div>*@
+            <div class="left">
+                <ul>
+                    <li><strong>Chọn mức giá:</strong></li>
+                    <li><a href="#">Dưới 4 triệu</a></li>
+                    <li><a href="#">4 - 7 triệu</a></li>
+                    <li><a href="#">7- 12 triệu</a></li>
+                    <li><a href="#">Trên 12 triệu</a></li>
+                </ul>
+            </div>
+            <div class="right">
+                <ul>
+                    <li><strong>Sắp xếp theo:</strong></li>
+                    <li><a href="#">Giá thấp đến cao</a></li>
+                    <li><a href="#">Giá cao đến thấp</a></li>
+                </ul>
+            </div>
+        </div>*@
 </div>
 <!-- end container -->
 <div class="product">
@@ -167,21 +166,26 @@
 
 <script>
     var slideIndex = 1;
-    
+
     showDivs(slideIndex);
 
+    var time = setInterval(function () { plusDivs(slideIndex++) }, 3000);
+
     function plusDivs(n) {
-      showDivs(slideIndex += n);
+        showDivs(slideIndex += n);
+        clearTimeout(time);
+        time = setInterval(function () { plusDivs(slideIndex++) }, 3000);
     }
 
     function showDivs(n) {
-      var i;
-      var x = document.getElementsByClassName("mySlides");
-      if (n > x.length) {slideIndex = 1}
-      if (n < 1) {slideIndex = x.length} ;
-      for (i = 0; i < x.length; i++) {
-        x[i].style.display = "none";
-      }
-      x[slideIndex-1].style.display = "block";
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        if (n > x.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = x.length };
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        x[slideIndex - 1].style.display = "block";
     }
+
 </script>
