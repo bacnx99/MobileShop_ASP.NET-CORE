@@ -23,7 +23,17 @@ namespace MobileShop.Data.Repositories
 
         public IEnumerable<Product> PreferredProducts()
         {
-            return _appDbContext.Products.Where(p => p.Product_IsPreferred == true).Select(p => p);
+            return _appDbContext.Products.Where(p => p.Product_IsPreferred == true).Select(p => p).Take(5);
+        }
+
+        public IEnumerable<Product> ProductsBestSelling()
+        {
+            return _appDbContext.Products.OrderByDescending(p => p.Product_Purchased).Take(5);
+        }
+
+        public IEnumerable<Product> OtherProducts()
+        {
+            return _appDbContext.Products.OrderBy(x => Guid.NewGuid()).Take(5);
         }
 
         //public Product GetProductById(int productId) => _appDbContext.Products.FirstOrDefault(p => p.Product_Id == productId);

@@ -101,7 +101,6 @@
     }
 
 .product-description {
-    margin-top: -140px;
     padding: 20px;
     grid-column-start: 1;
     grid-column-start: 2 span;

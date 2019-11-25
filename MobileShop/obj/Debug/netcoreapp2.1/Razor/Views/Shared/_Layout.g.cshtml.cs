@@ -66,12 +66,12 @@ using MobileShop.Data.Models;
             WriteLiteral("<!DOCTYPE html>\n<html lang=\"en\">\n");
             EndContext();
             BeginContext(33, 306, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "afe86341c62b412091b8e014f028a02f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d57e49a0a53f4f3ab4aa3a6c5046a444", async() => {
                 BeginContext(39, 235, true);
                 WriteLiteral("\n    <meta charset=\"UTF-8\">\n    <title>Thuong mai dien tu</title>\n    <link href=\"https://fonts.googleapis.com/css?family=Roboto&display=swap\" rel=\"stylesheet\">\n    <script src=\"https://kit.fontawesome.com/c9d06a3481.js\"></script>\n    ");
                 EndContext();
                 BeginContext(274, 57, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "5e433384c4084ccfad2e0bfedb8ed4b8", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "7deca33c5956462b91c4d164aee103e0", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -105,12 +105,12 @@ using MobileShop.Data.Models;
             WriteLiteral("\n");
             EndContext();
             BeginContext(340, 2601, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4a73c734f5cd4ecabe3beacf7078bbc4", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b360efbc8329486692c13996cb6de23e", async() => {
                 BeginContext(346, 111, true);
                 WriteLiteral("\n    <div class=\"header\">\n        <div class=\"header-box\">\n            <div class=\"brand\">\n                <h2>");
                 EndContext();
                 BeginContext(457, 60, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f6c1ac4b1bb740eaad26d8b3c99628ef", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5d73b42f57844c92bf9a9e2c8e91fb45", async() => {
                     BeginContext(501, 12, true);
                     WriteLiteral("Mobile Shop ");
                     EndContext();
@@ -144,7 +144,7 @@ using MobileShop.Data.Models;
                 ");
                 EndContext();
                 BeginContext(879, 115, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f8e9b49e45f743a4b4bb413a0083ecb1", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c047cc4e8bc04d7e9a5758284de081dd", async() => {
                     BeginContext(931, 59, true);
                     WriteLiteral("\n                    <span>Giỏ hàng</span>\n                ");
                     EndContext();

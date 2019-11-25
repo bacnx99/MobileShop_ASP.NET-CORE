@@ -24,6 +24,7 @@ namespace MobileShop.Controllers
             vm.PreferredProducts = _productRepository.PreferredProducts();
             vm.Products = _productRepository.Products;
             vm.Categories = _categoryRepository.Categories;
+            vm.ProductsBestSelling = _productRepository.ProductsBestSelling();
             return View(vm);
         }
     }

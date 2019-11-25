@@ -14,6 +14,8 @@ namespace MobileShop.ViewModels
 
         public IEnumerable<Product> PreferredProducts { get; set; }
 
+        public IEnumerable<Product> ProductsBestSelling { get; set; }
+
         public int ProductCount { get; set; }
     }
 }

@@ -11,6 +11,8 @@ namespace MobileShop.Data.Interfaces
     {
         IEnumerable<Product> Products { get; }
         IEnumerable<Product> PreferredProducts();
+        IEnumerable<Product> ProductsBestSelling();
+        IEnumerable<Product> OtherProducts();
         Product GetProductById(int productId);
         //IEnumerable<Product> GetAllProducts();
         Product Add(Product product, IFormFile photo);

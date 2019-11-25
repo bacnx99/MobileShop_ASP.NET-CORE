@@ -19,7 +19,9 @@ namespace MobileShop.Controllers
         }
         public IActionResult Detail(int id)
         {
-            return View(_productRepository.GetProductById(id));
+            ViewBag.Product = _productRepository.GetProductById(id);
+
+            return View(_productRepository.OtherProducts());
         }
     }
 }

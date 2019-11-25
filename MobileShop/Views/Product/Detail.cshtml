@@ -1,4 +1,4 @@
-﻿@model Product
+﻿@model IEnumerable<Product>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -21,8 +21,6 @@
     </div>
 </div>
 
-
-
 <div class="product-category">
     <ul>
         <li><a href="#"><img src="//cdn.tgdd.vn/Brand/1/iPhone-(Apple)42-b_16.jpg"></a></li>
@@ -39,17 +37,16 @@
         <li><a href="#"><img src="//cdn.tgdd.vn/Brand/1/Mobiistar42-b_20.jpg"></a></li>
     </ul>
 </div>
-
 <div class="product-detail">
     <div class="product-detail__title">
-        <h2>Điện thoại @Model.Product_Name</h2>
+        <h2>Điện thoại @ViewBag.Product.Product_Name</h2>
     </div>
     <div class="product-detail__content">
         <div class="product-image">
-            <img src="https://cdn.tgdd.vn/Products/Images/42/198986/sieu-pham-galaxy-s-moi-2-512gb-black-400x460.png" alt="image">
+            <img src="~/images/@ViewBag.Product.Product_ImageThumbnail" alt="image">
         </div>
         <div class="product-xxx">
-            <h2 class="product-price">@Model.Product_Price.ToString("#,###")</h2>
+            <h2 class="product-price">@ViewBag.Product.Product_Price.ToString("#,###")</h2>
             <div class="product-info">
                 <table>
                     <tr>
@@ -57,45 +54,45 @@
                     </tr>
                     <tr>
                         <td>Hệ điều hành:</td>
-                        <td>@Model.Product_OperatingSystem</td>
+                        <td>@ViewBag.Product.Product_OperatingSystem</td>
                     </tr>
                     <tr>
                         <td>Chipset(Hãng SX CPU):</td>
-                        <td>@Model.Product_Chipset</td>
+                        <td>@ViewBag.Product.Product_Chipset</td>
                     </tr>
                     <tr>
                         <td>Tốc độ CPU:</td>
-                        <td>@Model.Product_CPUSpeed</td>
+                        <td>@ViewBag.Product.Product_CPUSpeed</td>
                     </tr>
                     <tr>
                         <td>Chip đồ họa (GPU):</td>
-                        <td>@Model.Product_GPU</td>
+                        <td>@ViewBag.Product.Product_GPU</td>
                     </tr>
                     <tr>
                         <th class="product-info__label" colspan="2">Màn hình</th>
                     </tr>
                     <tr>
                         <td>Độ phân giải:</td>
-                        <td>@Model.Product_ScreenResolution</td>
+                        <td>@ViewBag.Product.Product_ScreenResolution</td>
                     </tr>
                     <tr>
                         <td>Màn hình rộng:</td>
-                        <td>@Model.Product_ScreenWidth</td>
+                        <td>@ViewBag.Product.Product_ScreenWidth</td>
                     </tr>
                     <tr>
                         <th class="product-info__label" colspan="2">Bộ nhớ & lưu trữ</th>
                     </tr>
                     <tr>
                         <td>RAM:</td>
-                        <td>@Model.Product_RAM</td>
+                        <td>@ViewBag.Product.Product_RAM</td>
                     </tr>
                     <tr>
                         <td>Bộ nhớ trong:</td>
-                        <td>@Model.Product_ROM</td>
+                        <td>@ViewBag.Product.Product_ROM</td>
                     </tr>
                     <tr>
                         <td>Hỗ trợ thẻ nhớ:</td>
-                        @if (Model.Product_SDCardSupport == true)
+                        @if (ViewBag.Product.Product_SDCardSupport == true)
                         {
                             <td>Có</td>
                         }
@@ -106,61 +103,40 @@
                     </tr>
                     <tr>
                         <td>Thẻ nhớ ngoài:</td>
-                        <td>@Model.Product_SDCard</td>
+                        <td>@ViewBag.Product.Product_SDCard</td>
                     </tr>
                     <tr>
                         <th class="product-info__label" colspan="2">Camera</th>
                     </tr>
                     <tr>
                         <td>Camera trước:</td>
-                        <td>@Model.Product_FrontCamera</td>
+                        <td>@ViewBag.Product.Product_FrontCamera</td>
                     </tr>
                     <tr>
                         <td>Camera sau:</td>
-                        <td>@Model.Product_RearCamera</td>
+                        <td>@ViewBag.Product.Product_RearCamera</td>
                     </tr>
                 </table>
             </div>
-            <a asp-controller="ShoppingCart" asp-action="AddToShoppingCart" asp-route-id="@Model.Product_Id">THÊM VÀO GIỎ HÀNG</a>
+            <a asp-controller="ShoppingCart" asp-action="AddToShoppingCart" asp-route-id="@ViewBag.Product.Product_Id">THÊM VÀO GIỎ HÀNG</a>
         </div>
         <div class="product-related">
-            <h2>Các sản phẩm liên quan</h2>
+            <h2>Các sản phẩm khác</h2>
             <ul>
-                <li>
-                    <a href="#">
-                        <img src="https://cdn.tgdd.vn/Products/Images/42/202028/oppo-a9-2020-green-1-400x400.jpg" alt="">
-                    </a>
-                    <span>Điện thoại OPPO F12 PRO 256GB</span>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="https://cdn.tgdd.vn/Products/Images/42/202028/oppo-a9-2020-green-1-400x400.jpg" alt="">
-                    </a>
-                    <span>Điện thoại OPPO F12 PRO 256GB</span>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="https://cdn.tgdd.vn/Products/Images/42/202028/oppo-a9-2020-green-1-400x400.jpg" alt="">
-                    </a>
-                    <span>Điện thoại OPPO F12 PRO 256GB</span>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="https://cdn.tgdd.vn/Products/Images/42/202028/oppo-a9-2020-green-1-400x400.jpg" alt="">
-                    </a>
-                    <span>Điện thoại OPPO F12 PRO 256GB</span>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="https://cdn.tgdd.vn/Products/Images/42/202028/oppo-a9-2020-green-1-400x400.jpg" alt="">
-                    </a>
-                    <span>Điện thoại OPPO F12 PRO 256GB</span>
-                </li>
+                @foreach (var p in Model)
+                {
+                    <li>
+                        <a asp-action="Detail" asp-route-id="@p.Product_Id">
+                            <img src="~/images/@p.Product_ImageThumbnail" alt="image">
+                        </a>
+                        <span>@p.Product_Name</span>
+                    </li>
+                }
             </ul>
         </div>
-
         <div class="product-description">
-            <p>@Model.Product_Description</p>
+            <h2>Mô tả</h2>
+            <p>@ViewBag.Product.Product_Description</p>
         </div>
     </div>
 </div>
