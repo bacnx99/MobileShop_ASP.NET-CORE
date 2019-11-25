@@ -12,7 +12,7 @@ namespace MobileShop.ViewModels
 
         public IEnumerable<Category> Categories { get; set; }
 
-        public string CurrentCategory { get; set; }
+        public IEnumerable<Product> PreferredProducts { get; set; }
 
         public int ProductCount { get; set; }
     }

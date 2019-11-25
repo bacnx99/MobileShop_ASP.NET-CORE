@@ -10,7 +10,7 @@ namespace MobileShop.Data.Interfaces
     public interface IProductRepository
     {
         IEnumerable<Product> Products { get; }
-        IEnumerable<Product> PreferredProducts { get; }
+        IEnumerable<Product> PreferredProducts();
         Product GetProductById(int productId);
         //IEnumerable<Product> GetAllProducts();
         Product Add(Product product, IFormFile photo);

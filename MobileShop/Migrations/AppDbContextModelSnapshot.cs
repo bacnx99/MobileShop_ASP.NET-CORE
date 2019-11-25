@@ -141,6 +141,8 @@ namespace MobileShop.Migrations
 
                     b.Property<decimal>("Product_Price");
 
+                    b.Property<int>("Product_Purchased");
+
                     b.Property<string>("Product_RAM");
 
                     b.Property<string>("Product_ROM");

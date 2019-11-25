@@ -21,7 +21,10 @@ namespace MobileShop.Data.Repositories
 
         public IEnumerable<Product> Products => _appDbContext.Products.Include(c => c.Category);
 
-        public IEnumerable<Product> PreferredProducts => _appDbContext.Products.Where(p => p.Product_IsPreferred).Include(c => c.Category);
+        public IEnumerable<Product> PreferredProducts()
+        {
+            return _appDbContext.Products.Where(p => p.Product_IsPreferred == true).Select(p => p);
+        }
 
         //public Product GetProductById(int productId) => _appDbContext.Products.FirstOrDefault(p => p.Product_Id == productId);
         public Product GetProductById(int id)

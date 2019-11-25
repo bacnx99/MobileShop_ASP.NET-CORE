@@ -4,20 +4,27 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MobileShop.Data.Interfaces;
+using MobileShop.ViewModels;
 
 namespace MobileShop.Controllers
 {
     public class HomeController : Controller
     {
         private readonly IProductRepository _productRepository;
+        private readonly ICategoryRepository _categoryRepository;
 
-        public HomeController(IProductRepository productRepository)
+        public HomeController(IProductRepository productRepository, ICategoryRepository categoryRepository)
         {
             _productRepository = productRepository;
+            _categoryRepository = categoryRepository;
         }
         public IActionResult Index()
         {
-            return View(_productRepository.Products);
+            ProductListViewModel vm = new ProductListViewModel();
+            vm.PreferredProducts = _productRepository.PreferredProducts();
+            vm.Products = _productRepository.Products;
+            vm.Categories = _categoryRepository.Categories;
+            return View(vm);
         }
     }
 }

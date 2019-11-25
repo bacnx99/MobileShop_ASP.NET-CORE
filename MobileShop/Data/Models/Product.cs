@@ -49,6 +49,8 @@ namespace MobileShop.Data.Models
 
         public int Category_Id { get; set; }
 
+        public int Product_Purchased { get; set; }
+
         public virtual Category Category { get; set; } 
     }
 }

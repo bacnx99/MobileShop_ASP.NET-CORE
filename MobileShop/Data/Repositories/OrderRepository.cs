@@ -57,6 +57,12 @@ namespace MobileShop.Data.Repositories
                 };
 
                 _appDbContext.OrderDetails.Add(orderDetail);
+
+                Product p = _appDbContext.Products.Find(shoppingCartItem.Product.Product_Id);
+                if (p != null)
+                {
+                    p.Product_Purchased += shoppingCartItem.ShoppingCartItem_Amount;                  
+                }
             }
 
             _appDbContext.SaveChanges();

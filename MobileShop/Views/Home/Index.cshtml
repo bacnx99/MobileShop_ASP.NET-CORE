@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Product>
+﻿
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -6,17 +6,19 @@
 <link href="~/User/css/Home/IndexCSS.css" rel="stylesheet" />
 <div class="row">
     <div class="row-box">
-        <h5>
-            <i class="fas fa-list"></i>
-            DANH MỤC SẢN PHẨM
-        </h5>
         <span>
             <i class="fas fa-map-marker-alt"></i>
             Địa chỉ: 123 Bình Giã, Vũng Tàu
         </span>
-        <span>
+        <span style="margin-left: 10px;">
             <i class="fas fa-phone-alt"></i>
             Hotline: 1900.0702
+        </span>
+        <span style="float: right;">           
+            <a href="#" style="text-decoration: none; color: #000;">
+                <i class="fas fa-envelope"></i>
+                Liên hệ
+            </a>
         </span>
     </div>
 </div>
@@ -31,8 +33,10 @@
             <img class="mySlides" src="https://cdn.tgdd.vn/2019/09/banner/thu-cu-note10-800-300-800x300-(1).png" alt="banner">
             <img class="mySlides" src="https://cdn.tgdd.vn/2019/09/banner/oppo-A9-800-300-800x300-(1).png" alt="">
             <img class="mySlides" src="https://cdn.tgdd.vn/2019/09/banner/huawei-3i-white-800-300-800x300-(1).png" alt="">
-            <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-            <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+            <div class="btn-banner">
+                <button onclick="plusDivs(-1)">&#10094;</button>
+                <button onclick="plusDivs(1)">&#10095;</button>
+            </div>
         </div>
         <div class="banner-right">
             <img src="https://cdn.cellphones.com.vn/media/ltsoft/promotion/thu-c_-galaxy-note-10-_-10_-_2_-750x350_2_1911.png" alt="banner" />
@@ -43,18 +47,13 @@
     <div class="menu">
         <h4><i class="fas fa-list"></i>     Danh mục sản phẩm</h4>
         <ul>
-            <li><a href="#">iPhone</a></li>
-            <li><a href="#">Samsung</a></li>
-            <li><a href="#">Xiaomi</a></li>
-            <li><a href="#">ASUS</a></li>
-            <li><a href="#">iPhone</a></li>
-            <li><a href="#">Samsung</a></li>
-            <li><a href="#">Xiaomi</a></li>
-            <li><a href="#">ASUS</a></li>
-            <li><a href="#">iPhone</a></li>
+            @foreach (var c in Model.Categories)
+            {
+                <li><a href="#">@c.Category_Name</a></li>
+            }
         </ul>
     </div>
-    <div class="filter-option">
+    @*<div class="filter-option">
         <div class="left">
             <ul>
                 <li><strong>Chọn mức giá:</strong></li>
@@ -71,17 +70,47 @@
                 <li><a href="#">Giá cao đến thấp</a></li>
             </ul>
         </div>
-    </div>
+    </div>*@
 </div>
 <!-- end container -->
 <div class="product">
     <div class="product-brand">
-        <h4>ĐIỆN THOẠI IPHONE</h4>
+        <h4>ĐIỆN THOẠI BÁN CHẠY</h4>
         <a href="">Xem thêm</a>
     </div>
     <div class="product-row">
         <ul>
-            @foreach (var p in Model)
+            @foreach (var p in Model.PreferredProducts)
+            {
+                <li>
+                    <div class="product-box">
+                        <a asp-controller="Product" asp-action="Detail" asp-route-id="@p.Product_Id">
+                            <div class="image">
+                                <img src="https://cdn.tgdd.vn/Products/Images/42/114115/iphone-x-64gb-21-400x400.jpg" alt="">
+                            </div>
+                            <h5>@p.Product_Name</h5>
+                            <div class="price">
+                                <p>
+                                    <b>@p.Product_Price₫</b>
+                                    <span>22.000.000₫</span>
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+            }
+        </ul>
+    </div>
+</div>
+
+<div class="product">
+    <div class="product-brand">
+        <h4>ĐIỆN THOẠI YÊU THÍCH</h4>
+        <a href="">Xem thêm</a>
+    </div>
+    <div class="product-row">
+        <ul>
+            @foreach (var p in Model.PreferredProducts)
             {
                 <li>
                     <div class="product-box">
@@ -111,171 +140,34 @@
     </div>
     <div class="product-row">
         <ul>
-            <li>
-                <div class="product-box">
-                    <a href="#">
-                        <div class="image">
-                            <img src="https://cdn.tgdd.vn/Products/Images/42/114115/iphone-x-64gb-21-400x400.jpg" alt="">
-                        </div>
-                        <h5>iPhone X 64GB</h5>
-                        <div class="price">
-                            <p>
-                                <b>20.000.000₫</b>
-                                <span>22.000.000₫</span>
-                            </p>
-                        </div>
-                    </a>
-                </div>
-            </li>
-            <li>
-                <div class="product-box">
-                    <a href="#">
-                        <div class="image">
-                            <img src="https://cdn.tgdd.vn/Products/Images/42/114115/iphone-x-64gb-21-400x400.jpg" alt="">
-                        </div>
-                        <h5>iPhone X 64GB</h5>
-                        <div class="price">
-                            <p>
-                                <b>20.000.000₫</b>
-                                <span>22.000.000₫</span>
-                            </p>
-                        </div>
-                    </a>
-                </div>
-            </li>
-            <li>
-                <div class="product-box">
-                    <a href="#">
-                        <div class="image">
-                            <img src="https://cdn.tgdd.vn/Products/Images/42/114115/iphone-x-64gb-21-400x400.jpg" alt="">
-                        </div>
-                        <h5>iPhone X 64GB</h5>
-                        <div class="price">
-                            <p>
-                                <b>20.000.000₫</b>
-                                <span>22.000.000₫</span>
-                            </p>
-                        </div>
-                    </a>
-                </div>
-            </li>
-            <li>
-                <div class="product-box">
-                    <a href="#">
-                        <div class="image">
-                            <img src="https://cdn.tgdd.vn/Products/Images/42/114115/iphone-x-64gb-21-400x400.jpg" alt="">
-                        </div>
-                        <h5>iPhone X 64GB</h5>
-                        <div class="price">
-                            <p>
-                                <b>20.000.000₫</b>
-                                <span>22.000.000₫</span>
-                            </p>
-                        </div>
-                    </a>
-                </div>
-            </li>
-            <li>
-                <div class="product-box">
-                    <a href="#">
-                        <div class="image">
-                            <img src="https://cdn.tgdd.vn/Products/Images/42/114115/iphone-x-64gb-21-400x400.jpg" alt="">
-                        </div>
-                        <h5>iPhone X 64GB</h5>
-                        <div class="price">
-                            <p>
-                                <b>20.000.000₫</b>
-                                <span>22.000.000₫</span>
-                            </p>
-                        </div>
-                    </a>
-                </div>
-            </li>
-            <li>
-                <div class="product-box">
-                    <a href="#">
-                        <div class="image">
-                            <img src="https://cdn.tgdd.vn/Products/Images/42/114115/iphone-x-64gb-21-400x400.jpg" alt="">
-                        </div>
-                        <h5>iPhone X 64GB</h5>
-                        <div class="price">
-                            <p>
-                                <b>20.000.000₫</b>
-                                <span>22.000.000₫</span>
-                            </p>
-                        </div>
-                    </a>
-                </div>
-            </li>
-            <li>
-                <div class="product-box">
-                    <a href="#">
-                        <div class="image">
-                            <img src="https://cdn.tgdd.vn/Products/Images/42/114115/iphone-x-64gb-21-400x400.jpg" alt="">
-                        </div>
-                        <h5>iPhone X 64GB</h5>
-                        <div class="price">
-                            <p>
-                                <b>20.000.000₫</b>
-                                <span>22.000.000₫</span>
-                            </p>
-                        </div>
-                    </a>
-                </div>
-            </li>
-            <li>
-                <div class="product-box">
-                    <a href="#">
-                        <div class="image">
-                            <img src="https://cdn.tgdd.vn/Products/Images/42/114115/iphone-x-64gb-21-400x400.jpg" alt="">
-                        </div>
-                        <h5>iPhone X 64GB</h5>
-                        <div class="price">
-                            <p>
-                                <b>20.000.000₫</b>
-                                <span>22.000.000₫</span>
-                            </p>
-                        </div>
-                    </a>
-                </div>
-            </li>
-            <li>
-                <div class="product-box">
-                    <a href="#">
-                        <div class="image">
-                            <img src="https://cdn.tgdd.vn/Products/Images/42/114115/iphone-x-64gb-21-400x400.jpg" alt="">
-                        </div>
-                        <h5>iPhone X 64GB</h5>
-                        <div class="price">
-                            <p>
-                                <b>20.000.000₫</b>
-                                <span>22.000.000₫</span>
-                            </p>
-                        </div>
-                    </a>
-                </div>
-            </li>
-            <li>
-                <div class="product-box">
-                    <a href="#">
-                        <div class="image">
-                            <img src="https://cdn.tgdd.vn/Products/Images/42/114115/iphone-x-64gb-21-400x400.jpg" alt="">
-                        </div>
-                        <h5>iPhone X 64GB</h5>
-                        <div class="price">
-                            <p>
-                                <b>20.000.000₫</b>
-                                <span>22.000.000₫</span>
-                            </p>
-                        </div>
-                    </a>
-                </div>
-            </li>
+            @foreach (var p in Model.Products)
+            {
+                <li>
+                    <div class="product-box">
+                        <a asp-controller="Product" asp-action="Detail" asp-route-id="@p.Product_Id">
+                            <div class="image">
+                                <img src="https://cdn.tgdd.vn/Products/Images/42/114115/iphone-x-64gb-21-400x400.jpg" alt="">
+                            </div>
+                            <h5>@p.Product_Name</h5>
+                            <div class="price">
+                                <p>
+                                    <b>@p.Product_Price₫</b>
+                                    <span>22.000.000₫</span>
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+            }
         </ul>
     </div>
 </div>
+
+
+
 <script>
     var slideIndex = 1;
+    
     showDivs(slideIndex);
 
     function plusDivs(n) {

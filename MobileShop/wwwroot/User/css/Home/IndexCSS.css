@@ -12,68 +12,12 @@
     margin: 0 auto;
 }
 
-    .row-box h5 {
-        background-color: #353b48;
-        color: white;
-        width: 256px;
-        text-align: center;
-        float: left;
-    }
-
-    .row-box span {
-        float: left;
-        margin: 0 10px;
-    }
-
 .content-header {
     clear: left;
     width: 1346px;
     margin: 0 auto;
     background-color: #f5f5f5;
 }
-
-/*.menu {
-    float: left;
-    width: 256px;
-    padding: 0 10px;
-}
-
-    .menu li {
-        height: 40px;
-        line-height: 40px;
-        list-style: none;
-        border-bottom: 1px solid #e6e6e6;
-        text-align: center;
-    }
-
-        .menu li:hover img {
-            width: 65%;
-            transition: 0.4s;
-        }
-
-        .menu li img {
-            width: 70%;
-        }
-
-        .menu li a {
-            text-decoration: none;
-            color: #000;
-        }*/
-
-/*.banner {
-    float: left;
-    padding: 10px;
-    width: 1090px;
-    height: 480px;
-    border-right: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-    border-left: 1px solid #ddd;
-}
-
-    .banner img {
-        width: 100%;
-        height: 460px;
-    }*/
 
 .banner {
     width: 1346px;
@@ -87,7 +31,7 @@
 
     .banner .banner-left img {
         width: 100%;
-        height: 404px;
+        height: 354px;
     }
 
     .banner .banner-right {
@@ -103,11 +47,33 @@
                 margin-bottom: 10px;
             }
 
+.btn-banner {
+    width: 100%;
+    text-align: right;
+}
+
+    .btn-banner button {
+        margin-top: 10px;
+        height: 40px;
+        width: 70px;
+        border: none;
+        outline: none;
+        background-color: #98d69d;
+        color: #fff;
+        border-radius: 5px;
+    }
+
+    .btn-banner button:hover {
+        cursor: pointer;
+        opacity: 0.8;
+    }
+
+
 .menu {
     padding: 20px;
     background-color: #fff;
     margin-top: 10px;
-    border-bottom: 1px dashed #ccc;
+    /*border-bottom: 1px dashed #ccc;*/
 }
 
     .menu h4 {
@@ -142,7 +108,7 @@
                 color: #000;
             }
 
-.filter-option {
+/*.filter-option {
     display: grid;
     grid-template-columns: auto auto;
     font-size: 14px;
@@ -199,7 +165,7 @@
 
         .filter-option .right ul li a:hover {
             color: red;
-        }
+        }*/
 
 
 /* END CONTENT HEADER CSS */

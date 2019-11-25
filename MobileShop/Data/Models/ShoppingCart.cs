@@ -22,8 +22,7 @@ namespace MobileShop.Data.Models
 
         public static ShoppingCart GetCart(IServiceProvider services)
         {
-            ISession session = services.GetRequiredService<IHttpContextAccessor>()?
-                .HttpContext.Session;
+            ISession session = services.GetRequiredService<IHttpContextAccessor>()?.HttpContext.Session;
 
             var context = services.GetService<AppDbContext>();
             string cartId = session.GetString("CartId") ?? Guid.NewGuid().ToString();
@@ -34,9 +33,7 @@ namespace MobileShop.Data.Models
         }
         public void AddToCart(Product product, int amount)
         {
-            var shoppingCartItem =
-                    _appDbContext.ShoppingCartItems.SingleOrDefault(
-                        s => s.Product.Product_Id == product.Product_Id && s.ShoppingCart_Id == ShoppingCart_Id);
+            var shoppingCartItem = _appDbContext.ShoppingCartItems.SingleOrDefault(s => s.Product.Product_Id == product.Product_Id && s.ShoppingCart_Id == ShoppingCart_Id);
 
             if (shoppingCartItem == null)
             {
@@ -57,9 +54,7 @@ namespace MobileShop.Data.Models
         }
         public int RemoveFromCart(Product product)
         {
-            var shoppingCartItem =
-                    _appDbContext.ShoppingCartItems.SingleOrDefault(
-                        s => s.Product.Product_Id == product.Product_Id && s.ShoppingCart_Id == ShoppingCart_Id);
+            var shoppingCartItem = _appDbContext.ShoppingCartItems.SingleOrDefault(s => s.Product.Product_Id == product.Product_Id && s.ShoppingCart_Id == ShoppingCart_Id);
 
             var localAmount = 0;
 
@@ -83,16 +78,11 @@ namespace MobileShop.Data.Models
         public List<ShoppingCartItem> GetShoppingCartItems()
         {
             return ShoppingCartItems ??
-                   (ShoppingCartItems =
-                       _appDbContext.ShoppingCartItems.Where(c => c.ShoppingCart_Id == ShoppingCart_Id)
-                           .Include(s => s.Product)
-                           .ToList());
+                   (ShoppingCartItems = _appDbContext.ShoppingCartItems.Where(c => c.ShoppingCart_Id == ShoppingCart_Id).Include(s => s.Product).ToList());
         }
         public void ClearCart()
         {
-            var cartItems = _appDbContext
-                .ShoppingCartItems
-                .Where(cart => cart.ShoppingCart_Id == ShoppingCart_Id);
+            var cartItems = _appDbContext.ShoppingCartItems.Where(cart => cart.ShoppingCart_Id == ShoppingCart_Id);
 
             _appDbContext.ShoppingCartItems.RemoveRange(cartItems);
 
@@ -100,8 +90,7 @@ namespace MobileShop.Data.Models
         }
         public decimal GetShoppingCartTotal()
         {
-            var total = _appDbContext.ShoppingCartItems.Where(c => c.ShoppingCart_Id == ShoppingCart_Id)
-                .Select(c => c.Product.Product_Price * c.ShoppingCartItem_Amount).Sum();
+            var total = _appDbContext.ShoppingCartItems.Where(c => c.ShoppingCart_Id == ShoppingCart_Id).Select(c => c.Product.Product_Price * c.ShoppingCartItem_Amount).Sum();
             return total;
         }
     }
