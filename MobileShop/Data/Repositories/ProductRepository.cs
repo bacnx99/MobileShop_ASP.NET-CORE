@@ -42,6 +42,30 @@ namespace MobileShop.Data.Repositories
         }
         public IEnumerable<Product> GetAllProducts() => _appDbContext.Products;
 
+        public IEnumerable<Product> Search(string keyword)
+        {
+            return _appDbContext.Products.Where(p => p.Product_Name.Contains(keyword)).Select(p => p);
+        }
+
+        public IEnumerable<Product> OrderByPriceASC(string keyword)
+        {
+            return _appDbContext.Products.Where(p => p.Product_Name.Contains(keyword)).OrderBy(p => p.Product_Price);
+        }
+
+        public IEnumerable<Product> OrderByPriceDESC(string keyword)
+        {
+            return _appDbContext.Products.Where(p => p.Product_Name.Contains(keyword)).OrderByDescending(p => p.Product_Price);
+        }
+
+        public IEnumerable<Product> OrderByPriceOption(decimal val1, decimal val2, string keyword)
+        {
+            if (val2 == 0)
+            {
+                return _appDbContext.Products.Where(p => p.Product_Name.Contains(keyword) && p.Product_Price > val1).Select(p => p);
+            }
+            return _appDbContext.Products.Where(p => p.Product_Name.Contains(keyword) && p.Product_Price > val1 && p.Product_Price <= val2).Select(p => p);
+        }
+
         public Product Add(Product product, IFormFile photo)
         {
             AddPhoto(product, photo);

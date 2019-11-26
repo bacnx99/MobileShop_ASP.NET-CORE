@@ -132,3 +132,4 @@ E:\MobileShop_ASP.NET-CORE\MobileShop\obj\Debug\netcoreapp2.1\MobileShop.pdb
 E:\MobileShop_ASP.NET-CORE\MobileShop\obj\Debug\netcoreapp2.1\MobileShop.csproj.CopyComplete
 E:\MobileShop_ASP.NET-CORE\MobileShop\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\OrderManagement\Index.g.cshtml.cs
 E:\MobileShop_ASP.NET-CORE\MobileShop\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\OrderManagement\Detail.g.cshtml.cs
+E:\MobileShop_ASP.NET-CORE\MobileShop\obj\Debug\netcoreapp2.1\Razor\Views\Search\Index.g.cshtml.cs

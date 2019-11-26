@@ -27,17 +27,6 @@
 
 /* EMD HEADER CSS */
 
-.product-category {
-    width: 1346px;
-    margin: 0 auto;
-}
-
-    .product-category ul {
-        list-style: none;
-        display: grid;
-        grid-template-columns: auto auto auto auto auto auto;
-    }
-
 .product-detail {
     width: 1346px;
     margin: 10px auto;
