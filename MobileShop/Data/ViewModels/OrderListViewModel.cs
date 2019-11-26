@@ -8,10 +8,10 @@ namespace MobileShop.Data.ViewModels
 {
     public class OrderListViewModel
     {
-        public IEnumerable<Order> Orders { get; set; }
+        public Order Order { get; set; }
 
-        public IEnumerable<OrderDetail> OrderDetails { get; set; }
+        public IEnumerable<OrderDetail> OrderDetail { get; set; }
 
-
+        public List<Product> Products { get; set; }
     }
 }

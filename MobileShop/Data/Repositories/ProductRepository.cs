@@ -35,8 +35,7 @@ namespace MobileShop.Data.Repositories
         {
             return _appDbContext.Products.OrderBy(x => Guid.NewGuid()).Take(5);
         }
-
-        //public Product GetProductById(int productId) => _appDbContext.Products.FirstOrDefault(p => p.Product_Id == productId);
+        
         public Product GetProductById(int id)
         {
             return _appDbContext.Products.Find(id);
@@ -88,7 +87,7 @@ namespace MobileShop.Data.Repositories
 
                 _appDbContext.SaveChanges();
 
-                if (File.Exists(path))
+                if (File.Exists(path) && photo != null)
                 {
                     File.Delete(path);
                 }

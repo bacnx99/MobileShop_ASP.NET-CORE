@@ -22,12 +22,8 @@ namespace MobileShop.Data.Models
 
         public string Order_Email { get; set; }
 
-        [BindNever]
-        [ScaffoldColumn(false)]
         public decimal Order_Total { get; set; }
 
-        [BindNever]
-        [ScaffoldColumn(false)]
         public DateTime Order_Placed { get; set; }
 
         public bool? IsCompleted { get; set; }

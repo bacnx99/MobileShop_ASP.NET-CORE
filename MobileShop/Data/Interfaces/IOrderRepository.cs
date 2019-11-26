@@ -11,6 +11,7 @@ namespace MobileShop.Data.Interfaces
         IEnumerable<Order> Orders { get; }
 
         Order GetOrderById(int id);
+        IEnumerable<OrderDetail> GetOrderDetailByOrderID(int id);
 
         Order Complete(int id);
 

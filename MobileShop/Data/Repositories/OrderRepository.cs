@@ -25,6 +25,11 @@ namespace MobileShop.Data.Repositories
             return _appDbContext.Orders.Find(id);
         }
 
+        public IEnumerable<OrderDetail> GetOrderDetailByOrderID(int id)
+        {
+            return _appDbContext.OrderDetails.Where(x => x.Order_Id == id).Select(x => x);
+        }
+
         public Order Complete(int id)
         {
             Order o = _appDbContext.Orders.Find(id);
@@ -41,6 +46,8 @@ namespace MobileShop.Data.Repositories
             order.Order_Placed = DateTime.Now;
 
             order.Order_Total = _shoppingCart.GetShoppingCartTotal();
+
+            order.IsCompleted = false;
 
             _appDbContext.Orders.Add(order);
 

@@ -4,5 +4,106 @@
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Detail</h2>
+<link href="~/Admin/css/OrderManagement/DetailCSS.css" rel="stylesheet" />
+<div class="wrapper-content">
+    <h2>CHI TIẾT ĐƠN HÀNG ĐƠN HÀNG #@Model.Order.Order_Id</h2>
+    <div class="box">
+        <div>
+            <h3>Thông tin chi tiết</h3>
+            <table class="table-detail">
+                <tr>
+                    <th>#</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Giá</th>
+                    <th>Số lượng</th>
+                    <th>Tạm tính</th>
+                </tr>
+                <tr>
+                    @{ int i = 1, z = 0; decimal tong = 0; }
+                    @{
+                        OrderDetail[] q = new OrderDetail[ViewBag.OrderDetailCount];
+                        foreach (var item in Model.OrderDetail)
+                        {
+                            q[z] = item;
+                            z++;
+                        }
 
+                        z = 0;
+
+
+                        @foreach (var p in Model.Products)
+                        {
+                            <td>@i</td>
+                            <td>@p.Product_Name</td>
+                            <td>@p.Product_Price.ToString("#,###")</td>
+                            <td>@q[z].OrderDetail_Amount</td>
+
+                            decimal t = p.Product_Price * q[z].OrderDetail_Amount;
+
+                            <td>@t.ToString("#,###")</td>
+
+                            i++;
+                            z++;
+                            tong += t;
+                        }
+
+                    }
+                </tr>
+            </table>
+            <div style="float: right;">
+                <p style="margin-top: 10px; color: red; font-weight: bold; font-size: 20px;">Tổng tiền: @tong.ToString("#,###")</p>
+            </div>
+        </div>
+        <div>
+            <h3>Thông tin người đặt</h3>
+            <table class="table-info">
+                <tr>
+                    <th>Họ tên:</th>
+                    <td>@Model.Order.Order_Name</td>
+                </tr>
+                <tr>
+                    <th>Địa chỉ:</th>
+                    <td>@Model.Order.Order_Address</td>
+                </tr>
+                <tr>
+                    <th>Số điện thoại:</th>
+                    <td>@Model.Order.Order_PhoneNumber</td>
+                </tr>
+                <tr>
+                    <th>Email:</th>
+                    @if (@Model.Order.Order_Email != null)
+                    {
+                        <td>@Model.Order.Order_Email</td>
+                    }
+                    else
+                    {
+                        <td>- - -</td>
+                    }
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+@*<h2>@Model.Order.Order_Id</h2>
+    <h2>@Model.Order.Order_Name</h2>
+    <h2>@Model.Order.Order_Address</h2>
+    <h2>@Model.Order.Order_PhoneNumber</h2>
+    <h2>@Model.Order.Order_Email</h2>
+
+
+    @foreach (var m in Model.OrderDetail)
+    {
+        <h3>@m.Product_Id</h3>
+        <p>@m.OrderDetail_Amount</p>
+    }
+
+    <br />
+    <br />
+
+    @foreach (var item in Model.Products)
+    {
+        <h3>@item.Product_Name</h3>
+    }*@

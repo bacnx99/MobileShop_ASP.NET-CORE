@@ -10,8 +10,8 @@
     <table>
         <tr>
             <th>#</th>
-            <th>Mã đơn hàng</th>
             <th>Ngày đặt</th>
+            <th>Mã đơn hàng</th>
             <th>Tổng tiền</th>
             <th>Trạng thái</th>
             <th>Hành động</th>
@@ -21,16 +21,16 @@
         {
             <tr>
                 <td>@i</td>
-                <td>@item.Order_Id</td>
                 <td>@item.Order_Placed</td>
-                <td>@item.Order_Total</td>
+                <td>@item.Order_Id</td>
+                <td>@item.Order_Total.ToString("#,###")</td>
                 @if (item.IsCompleted == true)
                 {
-                    <td>Hoàn thành</td>
+                    <td style="color: green;">Hoàn thành</td>
                 }
                 else
                 {
-                    <td>Chưa hoàn thành</td>
+                    <td style="color: red; font-weight: bold;">Chưa hoàn thành</td>
                 }
                 <td>
                     <form asp-action="Detail" asp-route-id="@item.Order_Id" method="GET">

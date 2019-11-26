@@ -16,10 +16,12 @@ namespace MobileShop.Areas.Admin.Controllers
     public class OrderManagementController : Controller
     {
         private readonly IOrderRepository _orderRepository;
+        private readonly IProductRepository _productRepository;
 
-        public OrderManagementController(IOrderRepository orderRepository)
+        public OrderManagementController(IOrderRepository orderRepository, IProductRepository productRepository)
         {
             _orderRepository = orderRepository;
+            _productRepository = productRepository;
         }
 
         [Route("")]
@@ -63,12 +65,26 @@ namespace MobileShop.Areas.Admin.Controllers
             if (HttpContext.Session.GetString("UserID") != null)
             {
                 OrderListViewModel vm = new OrderListViewModel();
-                vm.Orders = _orderRepository.Orders;
+                vm.Order = _orderRepository.GetOrderById(id);
+                vm.OrderDetail = _orderRepository.GetOrderDetailByOrderID(id);
+
+                ViewBag.OrderDetailCount = _orderRepository.GetOrderDetailByOrderID(id).Count();
+
+                List<Product> px = new List<Product>();
+                
+                foreach (var item in vm.OrderDetail)
+                {
+                    var x = _productRepository.Products.Where(p => p.Product_Id == item.Product_Id).FirstOrDefault();
+                    px.Add(x);
+                }
+
+                vm.Products = px;
+
                 //vm.OrderDetails = _orderRepository.Orders.
                 
                 //_orderRepository.Complete(id);
                 
-                return RedirectToAction("Index");
+                return View(vm);
             }
             else
             {
