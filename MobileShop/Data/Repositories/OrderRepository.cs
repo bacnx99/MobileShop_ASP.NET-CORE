@@ -41,6 +41,17 @@ namespace MobileShop.Data.Repositories
             return o;
         }
 
+        public Order InComplete(int id)
+        {
+            Order o = _appDbContext.Orders.Find(id);
+            if (o != null)
+            {
+                o.IsCompleted = false;
+                _appDbContext.SaveChanges();
+            }
+            return o;
+        }
+
         public void CreateOrder(Order order)
         {
             order.Order_Placed = DateTime.Now;

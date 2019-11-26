@@ -36,7 +36,7 @@ h3 {
 
         .table-detail tr {
             display: grid;
-            grid-template-columns: 50px 250px 150px 100px 150px;
+            grid-template-columns: 70px 250px 130px 100px 150px;
         }
 
             .table-detail tr:nth-of-type(2n + 1) {
@@ -63,4 +63,38 @@ h3 {
 
     .table-info th {
         text-align: left;
+    }
+
+
+.action-incomplete {
+    color: #fff;
+    padding: 15px;
+    margin: 5px 0;
+    border-radius: 5px;
+    font-size: 12px;
+    width: 100%;
+    border: none;
+    background-color: #dc3737;
+}
+
+.action-incomplete:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.back {
+    text-decoration: none;
+    display: block;
+    color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 12px;
+    width: 100%;
+    text-align: center;
+    background-color: #6147c7;
+}
+
+    .back:hover {
+        cursor: pointer;
+        opacity: 0.8;
     }

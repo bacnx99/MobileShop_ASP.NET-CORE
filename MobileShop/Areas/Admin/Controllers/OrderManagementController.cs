@@ -58,6 +58,24 @@ namespace MobileShop.Areas.Admin.Controllers
             }
         }
 
+        [Route("InComplete/{id}")]
+        [HttpPost]
+        public IActionResult InComplete(int id)
+        {
+            if (HttpContext.Session.GetString("UserID") != null)
+            {
+                Order order = _orderRepository.GetOrderById(id);
+
+                _orderRepository.InComplete(id);
+                TempData["InCompleteSuccess"] = "Hủy hoàn thành đơn hàng: Mã đơn hàng - " + order.Order_Id + " thành công.";
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return RedirectToAction("Index", "Login");
+            }
+        }
+
         [Route("Detail/{id}")]
         [HttpGet]
         public IActionResult Detail(int id)
@@ -79,10 +97,6 @@ namespace MobileShop.Areas.Admin.Controllers
                 }
 
                 vm.Products = px;
-
-                //vm.OrderDetails = _orderRepository.Orders.
-                
-                //_orderRepository.Complete(id);
                 
                 return View(vm);
             }

@@ -7,6 +7,14 @@
 <link href="~/Admin/css/OrderManagement/IndexCSS.css" rel="stylesheet" />
 <div class="wrapper-content">
     <h2>QUẢN LÝ ĐƠN HÀNG</h2>
+    @if (TempData["CompleteSuccess"] != null)
+    {
+        <p style="text-align: center; color: green; margin-bottom: 5px;">@TempData["CompleteSuccess"]</p>
+    }
+    @if (TempData["InCompleteSuccess"] != null)
+    {
+        <p style="text-align: center; color: green; margin-bottom: 5px;">@TempData["InCompleteSuccess"]</p>
+    }
     <table>
         <tr>
             <th>#</th>

@@ -14,6 +14,7 @@ namespace MobileShop.Data.Interfaces
         IEnumerable<OrderDetail> GetOrderDetailByOrderID(int id);
 
         Order Complete(int id);
+        Order InComplete(int id);
 
         void CreateOrder(Order order);
     }

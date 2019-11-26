@@ -37,3 +37,21 @@ table {
     text-align: left;
     font-size: 18px;
 }
+
+.back {
+    text-decoration: none;
+    display: block;
+    color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 12px;
+    width: 25%;
+    text-align: center;
+    background-color: #6147c7;
+    margin: 20px auto;
+}
+
+    .back:hover {
+        cursor: pointer;
+        opacity: 0.8;
+    }

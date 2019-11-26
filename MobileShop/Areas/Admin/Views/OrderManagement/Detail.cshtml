@@ -12,14 +12,14 @@
             <h3>Thông tin chi tiết</h3>
             <table class="table-detail">
                 <tr>
-                    <th>#</th>
+                    <th>Ảnh</th>
                     <th>Tên sản phẩm</th>
                     <th>Giá</th>
                     <th>Số lượng</th>
                     <th>Tạm tính</th>
                 </tr>
                 <tr>
-                    @{ int i = 1, z = 0; decimal tong = 0; }
+                    @{ int z = 0; decimal tong = 0; }
                     @{
                         OrderDetail[] q = new OrderDetail[ViewBag.OrderDetailCount];
                         foreach (var item in Model.OrderDetail)
@@ -33,16 +33,17 @@
 
                         @foreach (var p in Model.Products)
                         {
-                            <td>@i</td>
+                            <td>
+                                <img src="~/images/@p.Product_ImageThumbnail" alt="image" style="width: 100%;"/>
+                            </td>
                             <td>@p.Product_Name</td>
-                            <td>@p.Product_Price.ToString("#,###")</td>
+                            <td>@q[z].OrderDetail_Price.ToString("#,###")</td>
                             <td>@q[z].OrderDetail_Amount</td>
 
-                            decimal t = p.Product_Price * q[z].OrderDetail_Amount;
+                            decimal t = q[z].OrderDetail_Price * q[z].OrderDetail_Amount;
 
                             <td>@t.ToString("#,###")</td>
 
-                            i++;
                             z++;
                             tong += t;
                         }
@@ -81,6 +82,27 @@
                     }
                 </tr>
             </table>
+            <div style="float: right;">
+                @if (Model.Order.IsCompleted == true)
+                {
+                    <p style="margin-top: 10px; font-weight: bold; font-size: 18px;">Trạng thái đơn hàng: <span style="color: green;">Hoàn thành</span></p>
+                    <form asp-action="InComplete" asp-route-id="@Model.Order.Order_Id" method="POST">
+                        <button class="action-incomplete" type="submit" onclick="return confirm('Bạn có chắc muốn hủy hoàn thành đơn hàng này?');">
+                            <i class="fas fa-unlink"></i>
+                            Hủy hoàn thành
+                        </button>
+                    </form>
+                }
+                else
+                {
+                    <p style="margin-top: 10px; font-weight: bold; font-size: 18px; margin-bottom: 5px;">Trạng thái đơn hàng: <span style="color: red;"> Chưa hoàn thành</span></p>
+                }
+                <a asp-action="Index" class="back">
+                    <i class="fas fa-arrow-left"></i>
+                    Quay lại
+                </a>
+
+            </div>
         </div>
     </div>
 </div>
