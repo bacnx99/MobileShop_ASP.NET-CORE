@@ -17,5 +17,7 @@ namespace MobileShop.Data.Interfaces
         Order InComplete(int id);
 
         void CreateOrder(Order order);
+
+        int TotalOrderIncomplete();
     }
 }

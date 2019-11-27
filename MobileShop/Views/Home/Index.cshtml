@@ -6,20 +6,7 @@
 <link href="~/User/css/Home/IndexCSS.css" rel="stylesheet" />
 <div class="row">
     <div class="row-box">
-        <span>
-            <i class="fas fa-map-marker-alt"></i>
-            Địa chỉ: 123 Bình Giã, Vũng Tàu
-        </span>
-        <span style="margin-left: 10px;">
-            <i class="fas fa-phone-alt"></i>
-            Hotline: 1900.0702
-        </span>
-        <span style="float: right;">
-            <a href="#" style="text-decoration: none; color: #000;">
-                <i class="fas fa-envelope"></i>
-                Liên hệ
-            </a>
-        </span>
+        <marquee style="color: red; font-weight: bold; font-size: 20px;">Chú ý: Bạn đang đọc một dòng chữ bằng tiếng Việt.</marquee>
     </div>
 </div>
 <style>
@@ -30,52 +17,36 @@
 <div class="content-header">
     <div class="banner">
         <div class="banner-left">
-            <img class="mySlides" src="https://cdn.tgdd.vn/2019/09/banner/thu-cu-note10-800-300-800x300-(1).png" alt="banner">
-            <img class="mySlides" src="https://cdn.tgdd.vn/2019/09/banner/oppo-A9-800-300-800x300-(1).png" alt="">
-            <img class="mySlides" src="https://cdn.tgdd.vn/2019/09/banner/huawei-3i-white-800-300-800x300-(1).png" alt="">
+            @foreach (var i in Model.Banners)
+            {
+                <img class="mySlides" src="~/images/banners/@i.Banner_Image" alt="banner">
+            }
+
             <div class="btn-banner">
                 <button onclick="plusDivs(-1)">&#10094;</button>
                 <button onclick="plusDivs(1)">&#10095;</button>
             </div>
         </div>
         <div class="banner-right">
-            <img src="https://cdn.cellphones.com.vn/media/ltsoft/promotion/thu-c_-galaxy-note-10-_-10_-_2_-750x350_2_1911.png" alt="banner" />
-            <img src="https://cdn.cellphones.com.vn/media/ltsoft/promotion/Right-banner_iphone_11_111.png" alt="banner" />
+            <img src="~/images/ads/1.png" alt="banner" />
+            <img src="~/images/ads/2.png" alt="banner" />
         </div>
     </div>
     <div class="menu">
-        <h4><i class="fas fa-list"></i>     Danh mục sản phẩm</h4>
+        <h4><i class="fas fa-list"></i> Danh mục sản phẩm</h4>
         <ul>
             @foreach (var c in Model.Categories)
             {
-                <li><a href="#">@c.Category_Name</a></li>
+                <li><a asp-controller="ProductByCategory" asp-action="Index" asp-route-id="@c.Category_Id">@c.Category_Name</a></li>
             }
         </ul>
     </div>
-    @*<div class="filter-option">
-            <div class="left">
-                <ul>
-                    <li><strong>Chọn mức giá:</strong></li>
-                    <li><a href="#">Dưới 4 triệu</a></li>
-                    <li><a href="#">4 - 7 triệu</a></li>
-                    <li><a href="#">7- 12 triệu</a></li>
-                    <li><a href="#">Trên 12 triệu</a></li>
-                </ul>
-            </div>
-            <div class="right">
-                <ul>
-                    <li><strong>Sắp xếp theo:</strong></li>
-                    <li><a href="#">Giá thấp đến cao</a></li>
-                    <li><a href="#">Giá cao đến thấp</a></li>
-                </ul>
-            </div>
-        </div>*@
 </div>
 <!-- end container -->
 <div class="product">
     <div class="product-brand">
         <h4>ĐIỆN THOẠI BÁN CHẠY</h4>
-        <a href="">Xem thêm</a>
+        <a asp-controller="Product" asp-action="BestSellingProducts">Xem thêm</a>
     </div>
     <div class="product-row">
         <ul>
@@ -85,13 +56,12 @@
                     <div class="product-box">
                         <a asp-controller="Product" asp-action="Detail" asp-route-id="@p.Product_Id">
                             <div class="image">
-                                <img src="~/images/@p.Product_ImageThumbnail" alt="image">
+                                <img src="~/images/products/@p.Product_ImageThumbnail" alt="image">
                             </div>
                             <h5>@p.Product_Name</h5>
                             <div class="price">
                                 <p>
-                                    <b>@p.Product_Price₫</b>
-                                    <span>22.000.000₫</span>
+                                    <b>@p.Product_Price.ToString("#,###")₫</b>
                                 </p>
                             </div>
                         </a>
@@ -105,7 +75,7 @@
 <div class="product">
     <div class="product-brand">
         <h4>ĐIỆN THOẠI YÊU THÍCH</h4>
-        <a href="">Xem thêm</a>
+        <a asp-controller="Product" asp-action="PreferredProducts">Xem thêm</a>
     </div>
     <div class="product-row">
         <ul>
@@ -115,13 +85,12 @@
                     <div class="product-box">
                         <a asp-controller="Product" asp-action="Detail" asp-route-id="@p.Product_Id">
                             <div class="image">
-                                <img src="~/images/@p.Product_ImageThumbnail" alt="image">
+                                <img src="~/images/products/@p.Product_ImageThumbnail" alt="image">
                             </div>
                             <h5>@p.Product_Name</h5>
                             <div class="price">
                                 <p>
-                                    <b>@p.Product_Price₫</b>
-                                    <span>22.000.000₫</span>
+                                    <b>@p.Product_Price.ToString("#,###")₫</b>
                                 </p>
                             </div>
                         </a>
@@ -135,7 +104,7 @@
 <div class="product">
     <div class="product-brand">
         <h4>TẤT CẢ ĐIỆN THOẠI</h4>
-        <a href="">Xem thêm</a>
+        <a asp-controller="Product" asp-action="AllProducts">Xem thêm</a>
     </div>
     <div class="product-row">
         <ul>
@@ -145,13 +114,12 @@
                     <div class="product-box">
                         <a asp-controller="Product" asp-action="Detail" asp-route-id="@p.Product_Id">
                             <div class="image">
-                                <img src="~/images/@p.Product_ImageThumbnail" alt="image">
+                                <img src="~/images/products/@p.Product_ImageThumbnail" alt="image">
                             </div>
                             <h5>@p.Product_Name</h5>
                             <div class="price">
                                 <p>
-                                    <b>@p.Product_Price₫</b>
-                                    <span>22.000.000₫</span>
+                                    <b>@p.Product_Price.ToString("#,###")₫</b>
                                 </p>
                             </div>
                         </a>
@@ -169,12 +137,12 @@
 
     showDivs(slideIndex);
 
-    var time = setInterval(function () { plusDivs(slideIndex++) }, 3000);
+    var time = setInterval(function () { plusDivs() }, 3000);
 
-    function plusDivs(n) {
-        showDivs(slideIndex += n);
+    function plusDivs() {
+        showDivs(slideIndex += 1);
         clearTimeout(time);
-        time = setInterval(function () { plusDivs(slideIndex++) }, 3000);
+        time = setInterval(function () { plusDivs() }, 3000);
     }
 
     function showDivs(n) {

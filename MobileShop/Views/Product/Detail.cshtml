@@ -4,25 +4,6 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <link href="~/User/css/Product/DetailCSS.css" rel="stylesheet" />
-<div class="row">
-    <div class="row-box">
-        <span>
-            <i class="fas fa-map-marker-alt"></i>
-            Địa chỉ: 123 Bình Giã, Vũng Tàu
-        </span>
-        <span style="margin-left: 10px;">
-            <i class="fas fa-phone-alt"></i>
-            Hotline: 1900.0702
-        </span>
-        <span style="float: right;">
-            <a href="#" style="text-decoration: none; color: #000;">
-                <i class="fas fa-envelope"></i>
-                Liên hệ
-            </a>
-        </span>
-    </div>
-</div>
-
 
 <div class="product-detail">
     <div class="product-detail__title">
@@ -30,7 +11,7 @@
     </div>
     <div class="product-detail__content">
         <div class="product-image">
-            <img src="~/images/@ViewBag.Product.Product_ImageThumbnail" alt="image">
+            <img src="~/images/products/@ViewBag.Product.Product_ImageThumbnail" alt="image">
         </div>
         <div class="product-xxx">
             <h2 class="product-price">@ViewBag.Product.Product_Price.ToString("#,###")</h2>
@@ -105,7 +86,14 @@
                     </tr>
                 </table>
             </div>
-            <a asp-controller="ShoppingCart" asp-action="AddToShoppingCart" asp-route-id="@ViewBag.Product.Product_Id">THÊM VÀO GIỎ HÀNG</a>
+            @if (ViewBag.Product.Product_InStock == true)
+            {
+                <a asp-controller="ShoppingCart" asp-action="AddToShoppingCart" asp-route-id="@ViewBag.Product.Product_Id">THÊM VÀO GIỎ HÀNG</a>
+            }
+            else
+            {
+                <a style="background-color: #f76464;" disabled="disable">SẢN PHẨM TẠM HẾT</a>
+            }
         </div>
         <div class="product-related">
             <h2>Các sản phẩm khác</h2>
@@ -114,7 +102,7 @@
                 {
                     <li>
                         <a asp-action="Detail" asp-route-id="@p.Product_Id">
-                            <img src="~/images/@p.Product_ImageThumbnail" alt="image">
+                            <img src="~/images/products/@p.Product_ImageThumbnail" alt="image">
                         </a>
                         <span>@p.Product_Name</span>
                     </li>

@@ -85,5 +85,10 @@ namespace MobileShop.Data.Repositories
 
             _appDbContext.SaveChanges();
         }
+
+        public int TotalOrderIncomplete()
+        {
+            return _appDbContext.Orders.Where(o => o.IsCompleted == false).Count();
+        }
     }
 }

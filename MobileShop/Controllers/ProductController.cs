@@ -12,10 +12,12 @@ namespace MobileShop.Controllers
     public class ProductController : Controller
     {
         private readonly IProductRepository _productRepository;
+        private readonly ICategoryRepository _categoryRepository;
 
-        public ProductController(IProductRepository productRepository)
+        public ProductController(IProductRepository productRepository, ICategoryRepository categoryRepository)
         {
-            _productRepository = productRepository;    
+            _productRepository = productRepository;
+            _categoryRepository = categoryRepository;
         }
         public IActionResult Detail(int id)
         {
@@ -23,5 +25,27 @@ namespace MobileShop.Controllers
 
             return View(_productRepository.OtherProducts());
         }
+        public IActionResult AllProducts()
+        {
+            ProductListViewModel vm = new ProductListViewModel();
+            vm.Products = _productRepository.Products;
+            vm.Categories = _categoryRepository.Categories;
+            return View(vm);
+        }
+        public IActionResult BestSellingProducts()
+        {
+            ProductListViewModel vm = new ProductListViewModel();
+            vm.Products = _productRepository.ProductsBestSelling("All");
+            vm.Categories = _categoryRepository.Categories;
+            return View(vm);
+        }
+        public IActionResult PreferredProducts()
+        {
+            ProductListViewModel vm = new ProductListViewModel();
+            vm.Products = _productRepository.PreferredProducts("All");
+            vm.Categories = _categoryRepository.Categories;
+            return View(vm);
+        }
+        
     }
 }

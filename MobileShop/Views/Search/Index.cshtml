@@ -44,13 +44,12 @@
                     <div class="product-box">
                         <a asp-controller="Product" asp-action="Detail" asp-route-id="@p.Product_Id">
                             <div class="image">
-                                <img src="~/images/@p.Product_ImageThumbnail" alt="image">
+                                <img src="~/images/products/@p.Product_ImageThumbnail" alt="image">
                             </div>
                             <h5>@p.Product_Name</h5>
                             <div class="price">
                                 <p>
                                     <b>@p.Product_Price.ToString("#,###")₫</b>
-                                    <span>22.000.000₫</span>
                                 </p>
                             </div>
                         </a>

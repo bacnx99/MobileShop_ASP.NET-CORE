@@ -133,3 +133,9 @@ E:\MobileShop_ASP.NET-CORE\MobileShop\obj\Debug\netcoreapp2.1\MobileShop.csproj.
 E:\MobileShop_ASP.NET-CORE\MobileShop\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\OrderManagement\Index.g.cshtml.cs
 E:\MobileShop_ASP.NET-CORE\MobileShop\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\OrderManagement\Detail.g.cshtml.cs
 E:\MobileShop_ASP.NET-CORE\MobileShop\obj\Debug\netcoreapp2.1\Razor\Views\Search\Index.g.cshtml.cs
+E:\MobileShop_ASP.NET-CORE\MobileShop\obj\Debug\netcoreapp2.1\Razor\Views\ProductByCategory\Index.g.cshtml.cs
+E:\MobileShop_ASP.NET-CORE\MobileShop\obj\Debug\netcoreapp2.1\Razor\Views\Product\AllProducts.g.cshtml.cs
+E:\MobileShop_ASP.NET-CORE\MobileShop\obj\Debug\netcoreapp2.1\Razor\Views\Product\BestSellingProducts.g.cshtml.cs
+E:\MobileShop_ASP.NET-CORE\MobileShop\obj\Debug\netcoreapp2.1\Razor\Views\Product\PreferredProducts.g.cshtml.cs
+E:\MobileShop_ASP.NET-CORE\MobileShop\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\Analytics\Index.g.cshtml.cs
+E:\MobileShop_ASP.NET-CORE\MobileShop\obj\Debug\netcoreapp2.1\Razor\Areas\Admin\Views\BannerManagement\Index.g.cshtml.cs

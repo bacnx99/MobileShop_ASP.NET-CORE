@@ -145,9 +145,3 @@
             font-size: 14px;
         }
 
-            .product-box .price p span {
-                color: #000;
-                font-size: 13px;
-                text-decoration: line-through;
-                margin-left: 10px;
-            }

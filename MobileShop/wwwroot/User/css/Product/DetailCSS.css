@@ -7,24 +7,6 @@
     background-color: white;
 }
 
-.row-box {
-    width: 1346px;
-    margin: 0 auto;
-}
-
-    .row-box h5 {
-        background-color: #353b48;
-        color: white;
-        width: 256px;
-        text-align: center;
-        float: left;
-    }
-
-    .row-box span {
-        float: left;
-        margin: 0 10px;
-    }
-
 /* EMD HEADER CSS */
 
 .product-detail {

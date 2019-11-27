@@ -85,22 +85,13 @@ body {
         font-size: 20px;
     }
 
-.user {
+.hotline {
     float: left;
     width: 200px;
     color: white;
     font-weight: bold;
 }
 
-    .user a {
-        color: white;
-        text-decoration: none;
-    }
-
-        .user a:hover {
-            text-decoration: none;
-            color: #e6e6e6;
-        }
 /* END HEADER CSS */
 /* BEGIN FOOTER CSS */
 .footer {

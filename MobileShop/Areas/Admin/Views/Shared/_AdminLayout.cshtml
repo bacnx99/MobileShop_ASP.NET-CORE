@@ -4,9 +4,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <!--     <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>@ViewBag.Title</title>
+    <title>Mobile Shop - Admin</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/c9d06a3481.js"></script>
     <link href="~/Admin/css/LayoutCSS.css" rel="stylesheet" />
@@ -68,9 +66,15 @@
                 </li>
                 <h5>CÔNG CỤ KHÁC</h5>
                 <li>
-                    <a href="#">
+                    <a asp-controller="Analytics" asp-action="Index">
                         <i class="fas fa-chart-line"></i>
                         <span>Thống kê</span>
+                    </a>
+                </li>
+                <li>
+                    <a asp-controller="BannerManagement" asp-action="Index">
+                        <i class="fas fa-ad"></i>
+                        <span>Quản lý banner</span>
                     </a>
                 </li>
             </ul>

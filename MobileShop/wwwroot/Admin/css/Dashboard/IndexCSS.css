@@ -6,34 +6,18 @@
     width: 1112px;
     margin: 70px 0px 0px 234px;
     overflow-y: scroll;
+    padding: 0 20px;
 }
 
-.analytics {
-    padding: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-
-    .analytics .box {
-        padding: 30px;
-        background-color: #4e73df;
-        border-radius: 5px 50px 5px;
-        width: 300px;
+    .wrapper-content h2 {
         text-align: center;
+        padding: 30px 0;
     }
 
-        .analytics .box h4 {
-            color: #fff;
-            font-weight: bold;
-            font-size: 24px;
-        }
-
-        .analytics .box p {
-            color: #fff;
-            margin-top: 20px;
-            font-size: 18px;
-        }
+img {
+    width: 100%;
+    vertical-align: middle;
+}
 
 
 /* END WRAPPER-CONTENT CSS */

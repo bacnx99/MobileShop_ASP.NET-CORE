@@ -17,5 +17,7 @@ namespace MobileShop.ViewModels
         public IEnumerable<Product> ProductsBestSelling { get; set; }
 
         public int ProductCount { get; set; }
+
+        public IEnumerable<Banner> Banners { get; set; }
     }
 }

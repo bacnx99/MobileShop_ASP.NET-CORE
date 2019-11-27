@@ -34,7 +34,7 @@
                         @foreach (var p in Model.Products)
                         {
                             <td>
-                                <img src="~/images/@p.Product_ImageThumbnail" alt="image" style="width: 100%;"/>
+                                <img src="~/images/products/@p.Product_ImageThumbnail" alt="image" style="width: 100%;"/>
                             </td>
                             <td>@p.Product_Name</td>
                             <td>@q[z].OrderDetail_Price.ToString("#,###")</td>

@@ -19,15 +19,23 @@ namespace MobileShop.Data.Repositories
             _appDbContext = appDbContext;
         }
 
-        public IEnumerable<Product> Products => _appDbContext.Products.Include(c => c.Category);
+        public IEnumerable<Product> Products => _appDbContext.Products;
 
-        public IEnumerable<Product> PreferredProducts()
+        public IEnumerable<Product> PreferredProducts(string Get = "")
         {
+            if (Get == "All")
+            {
+                return _appDbContext.Products.Where(p => p.Product_IsPreferred == true).Select(p => p);
+            }
             return _appDbContext.Products.Where(p => p.Product_IsPreferred == true).Select(p => p).Take(5);
         }
 
-        public IEnumerable<Product> ProductsBestSelling()
+        public IEnumerable<Product> ProductsBestSelling(string Get = "")
         {
+            if (Get == "All")
+            {
+                return _appDbContext.Products.OrderByDescending(p => p.Product_Purchased);
+            }
             return _appDbContext.Products.OrderByDescending(p => p.Product_Purchased).Take(5);
         }
 
@@ -42,28 +50,63 @@ namespace MobileShop.Data.Repositories
         }
         public IEnumerable<Product> GetAllProducts() => _appDbContext.Products;
 
+        public IEnumerable<Product> GetAllProductsByCategoryId(int id)
+        {
+            return _appDbContext.Products.Where(p => p.Category_Id == id).Select(p => p);
+        }
+
         public IEnumerable<Product> Search(string keyword)
         {
             return _appDbContext.Products.Where(p => p.Product_Name.Contains(keyword)).Select(p => p);
         }
 
-        public IEnumerable<Product> OrderByPriceASC(string keyword)
+        public IEnumerable<Product> OrderByPriceASC(string keyword = "", int id = 0)
         {
+            if (id != 0)
+            {
+                return _appDbContext.Products.Where(p => p.Category_Id == id).OrderBy(p => p.Product_Price);
+            }
             return _appDbContext.Products.Where(p => p.Product_Name.Contains(keyword)).OrderBy(p => p.Product_Price);
         }
 
-        public IEnumerable<Product> OrderByPriceDESC(string keyword)
+        public IEnumerable<Product> OrderByPriceDESC(string keyword = "", int id = 0)
         {
+            if (id != 0)
+            {
+                return _appDbContext.Products.Where(p => p.Category_Id == id).OrderByDescending(p => p.Product_Price);
+            }
             return _appDbContext.Products.Where(p => p.Product_Name.Contains(keyword)).OrderByDescending(p => p.Product_Price);
         }
 
-        public IEnumerable<Product> OrderByPriceOption(decimal val1, decimal val2, string keyword)
+        public IEnumerable<Product> OrderByPriceOption(decimal val1, decimal val2, string keyword = "", int id = 0)
         {
-            if (val2 == 0)
+            if (id != 0)
             {
-                return _appDbContext.Products.Where(p => p.Product_Name.Contains(keyword) && p.Product_Price > val1).Select(p => p);
+                if (val2 == 0)
+                {
+                    return _appDbContext.Products.Where(p => p.Category_Id == id && p.Product_Price > val1).Select(p => p);
+                }
+                else
+                {
+                    return _appDbContext.Products.Where(p => p.Category_Id == id && p.Product_Price > val1 && p.Product_Price <= val2).Select(p => p);
+                }
             }
-            return _appDbContext.Products.Where(p => p.Product_Name.Contains(keyword) && p.Product_Price > val1 && p.Product_Price <= val2).Select(p => p);
+            else
+            {
+                if (val2 == 0)
+                {
+                    return _appDbContext.Products.Where(p => p.Product_Name.Contains(keyword) && p.Product_Price > val1).Select(p => p);
+                }
+                else
+                {
+                    return _appDbContext.Products.Where(p => p.Product_Name.Contains(keyword) && p.Product_Price > val1 && p.Product_Price <= val2).Select(p => p);
+                }
+            }
+        }
+
+        public int TotalProductsSold()
+        {
+            return _appDbContext.Products.Select(p => p.Product_Purchased).Sum();
         }
 
         public Product Add(Product product, IFormFile photo)
@@ -80,7 +123,7 @@ namespace MobileShop.Data.Repositories
             Product p = _appDbContext.Products.Find(id);
             if (p != null)
             {
-                var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\images", p.Product_ImageThumbnail);
+                var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images/products", p.Product_ImageThumbnail);
 
                 p.Product_Name = product.Product_Name;
                 p.Product_Price = product.Product_Price;
@@ -130,7 +173,7 @@ namespace MobileShop.Data.Repositories
             if (p != null)
             {
                 _appDbContext.Products.Remove(p);
-                var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images", p.Product_ImageThumbnail);
+                var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images/products", p.Product_ImageThumbnail);
                 if (File.Exists(path))
                 {
                     File.Delete(path);
@@ -144,7 +187,7 @@ namespace MobileShop.Data.Repositories
         {
             Random rand = new Random();
             string random = DateTime.Now.ToString("dd-MM-yyyy-HHmmss") + rand.Next(1, 1000);
-            var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images", random + photo.FileName);
+            var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images/products", random + photo.FileName);
             var stream = new FileStream(path, FileMode.Create);
             photo.CopyToAsync(stream).Wait();
             product.Product_ImageThumbnail = random + photo.FileName;
