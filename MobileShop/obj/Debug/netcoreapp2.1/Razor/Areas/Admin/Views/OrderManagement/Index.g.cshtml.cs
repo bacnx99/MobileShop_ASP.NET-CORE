@@ -76,7 +76,7 @@ using MobileShop.Data.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(148, 73, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "aa29090a07904114982f33eaac230310", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "f55ed3de08a94449afd7209a2aab944d", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -233,7 +233,7 @@ using MobileShop.Data.Models;
             WriteLiteral("                <td>\r\n                    ");
             EndContext();
             BeginContext(1456, 305, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9c2a7eaab6f44c87acc07bf52a11cd5e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "20d9eb4c73df4d5b873f4816c60e9f24", async() => {
                 BeginContext(1525, 229, true);
                 WriteLiteral("\r\n                        <button class=\"action-detail\" type=\"submit\">\r\n                            <i class=\"fas fa-info-circle\"></i>\r\n                            Chi tiết\r\n                        </button>\r\n                    ");
                 EndContext();
@@ -281,7 +281,7 @@ using MobileShop.Data.Models;
             WriteLiteral("                        ");
             EndContext();
             BeginContext(1863, 404, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c0f9c3150ef845e18374aebce5874c32", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f0407745afef4fd6a1aab5d7e5e90525", async() => {
                 BeginContext(1935, 325, true);
                 WriteLiteral(@"
                             <button class=""action-complete"" type=""submit"" onclick=""return confirm('Bạn có chắc muốn hoàn thành đơn hàng này?');"">
@@ -342,7 +342,7 @@ using MobileShop.Data.Models;
             WriteLiteral("    </table>\r\n    ");
             EndContext();
             BeginContext(2381, 75, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("pager", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "f0139457bd3b4e1c9869cad155ecb75b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("pager", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "350708bfc9ed42d284d479554ad9dc71", async() => {
             }
             );
             __PagedList_Core_Mvc_PagerTagHelper = CreateTagHelper<global::PagedList.Core.Mvc.PagerTagHelper>();
