@@ -79,7 +79,7 @@ using MobileShop.Data.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(110, 74, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "0a2159f0cffc4b56a29164d29aa4341e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "198cd3f6cc1943e68c2725f11c163187", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -154,7 +154,7 @@ using MobileShop.Data.Models;
             WriteLiteral("                            <td>\r\n                                ");
             EndContext();
             BeginContext(1209, 89, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "732ab557afd84fbeaf148065a24b75ab", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "527f4e5b912940e8a8153cb2994147d3", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -328,7 +328,7 @@ AddHtmlAttributeValue("", 1237, p.Product_ImageThumbnail, 1237, 25, false);
             WriteLiteral("                    <p style=\"margin-top: 10px; font-weight: bold; font-size: 18px;\">Trạng thái đơn hàng: <span style=\"color: green;\">Hoàn thành</span></p>\r\n                    ");
             EndContext();
             BeginContext(3268, 397, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1b721effd3a44afd8b78e7ab4952fdd1", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "02131e9ab4a94d6abdb0c51b7f208f7e", async() => {
                 BeginContext(3349, 309, true);
                 WriteLiteral(@"
                         <button class=""action-incomplete"" type=""submit"" onclick=""return confirm('Bạn có chắc muốn hủy hoàn thành đơn hàng này?');"">
@@ -390,7 +390,7 @@ AddHtmlAttributeValue("", 1237, p.Product_ImageThumbnail, 1237, 25, false);
             WriteLiteral("                ");
             EndContext();
             BeginContext(3943, 142, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "72bb6601c33748f3b1d364e90c470b1d", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "82cbe57b16504056ac7bb2bc14043f31", async() => {
                 BeginContext(3978, 103, true);
                 WriteLiteral("\r\n                    <i class=\"fas fa-arrow-left\"></i>\r\n                    Quay lại\r\n                ");
                 EndContext();

@@ -75,6 +75,16 @@ namespace MobileShop.Data.Models
 
             return localAmount;
         }
+
+        public void RemoveProductFromCart(Product product)
+        {
+            var shoppingCartItem = _appDbContext.ShoppingCartItems.SingleOrDefault(s => s.Product.Product_Id == product.Product_Id && s.ShoppingCart_Id == ShoppingCart_Id);
+            if (shoppingCartItem != null)
+            {
+                _appDbContext.ShoppingCartItems.Remove(shoppingCartItem);
+            }
+            _appDbContext.SaveChanges();
+        }
         public List<ShoppingCartItem> GetShoppingCartItems()
         {
             return ShoppingCartItems ??

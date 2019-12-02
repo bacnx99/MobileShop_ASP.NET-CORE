@@ -71,7 +71,7 @@ using MobileShop.Data.Models;
 #line default
 #line hidden
             BeginContext(122, 76, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "39a49d3e107a4064a3a8daad26f856da", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "48b8aa4b4e6e45c6b2988bbbdecdf5e3", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -90,7 +90,7 @@ using MobileShop.Data.Models;
             WriteLiteral("\r\n<div class=\"wrapper-content\">\r\n    <h2>CHI TIẾT SẢN PHẨM</h2>\r\n    <div class=\"box\">\r\n        <div class=\"box__detail\">\r\n            ");
             EndContext();
             BeginContext(333, 93, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "6f808353cdc941cb8f606b7c2ed100cf", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "607ab8c1dffd4bf5bac2724f2a746bbf", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -201,7 +201,7 @@ AddHtmlAttributeValue("", 361, Model.Product_ImageThumbnail, 361, 29, false);
             WriteLiteral("</td>\r\n                </tr>\r\n            </table>\r\n            ");
             EndContext();
             BeginContext(1816, 128, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5228d96fbef74aafbec2e83957560220", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b6fb6a9830de41d285eb182ddc18f509", async() => {
                 BeginContext(1918, 22, true);
                 WriteLiteral("Chỉnh sửa sản phẩm này");
                 EndContext();
@@ -370,7 +370,7 @@ AddHtmlAttributeValue("", 361, Model.Product_ImageThumbnail, 361, 29, false);
             WriteLiteral("</td>\r\n                </tr>\r\n            </table>\r\n        </div>\r\n    </div>\r\n    ");
             EndContext();
             BeginContext(4513, 106, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "89330dc799604bb991df71c4dee57806", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1abba2a384b2422f8a080d12fb76274e", async() => {
                 BeginContext(4548, 67, true);
                 WriteLiteral("\r\n        <i class=\"fas fa-arrow-left\"></i>\r\n        Quay lại\r\n    ");
                 EndContext();

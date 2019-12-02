@@ -53,6 +53,16 @@ namespace MobileShop.Controllers
             return RedirectToAction("Index");
         }
 
+        public IActionResult RemoveProductFromShoppingCart(int id)
+        {
+            var selectedProduct = _productRepository.Products.FirstOrDefault(p => p.Product_Id == id);
+            if (selectedProduct != null)
+            {
+                _shoppingCart.RemoveProductFromCart(selectedProduct);
+            }
+            return RedirectToAction("Index");
+        }
+
         public IActionResult ClearShoppingCart()
         {
             _shoppingCart.ClearCart();
